@@ -9,7 +9,8 @@ body {
 /* ---------------- HERO HEADER ---------------- */
 .hero {
   position: relative;
-  /* Removed background01.png */
+  /* Restored background01.png as base */
+  background-image: url('images/background01.png');
   background-size: cover;
   background-position: center;
   text-align: center;
@@ -108,7 +109,7 @@ body {
   width: 100%;
   padding: 80px 20px;
   text-align: center;
-  background: url('images/background02.png') center/cover no-repeat;
+  /* Removed background02.png */
   position: relative;
   color: white;
   overflow: hidden;
@@ -202,8 +203,4 @@ footer a {
 footer a:hover {
   color: #f4a261;
 }
-
-
-
-
 
