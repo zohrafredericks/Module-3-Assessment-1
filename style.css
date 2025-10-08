@@ -30,7 +30,7 @@ body {
 .hero::before {
   content: '';
   position: absolute;
-  top: 50%;
+  top: calc(50% + 2cm); /* moved 2cm down */
   left: 50%;
   transform: translate(-50%, -50%); /* center */
   width: 900px;
@@ -40,6 +40,7 @@ body {
   pointer-events: none;
   animation: floatOverlay 6s ease-in-out infinite alternate;
 }
+
 
 /* logo-img.png positioned diagonally over top-left corner of overlay, 2cm lower */
 .hero .logo-img {
@@ -235,6 +236,7 @@ footer a {
 footer a:hover {
   color: #f4a261;
 }
+
 
 
 
