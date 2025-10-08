@@ -1,8 +1,7 @@
 /* Header with layered backgrounds for index and recipe pages */
 .hero {
   position: relative;
-  /* Layered backgrounds: top = land, bottom = port */
-  background-image: url('../images/background-02-land.png'), url('../images/background-02-port.png');
+  background-image: url('images/background-02-land.png'), url('images/background-02-port.png');
   background-size: cover, cover;
   background-position: center, center;
   text-align: center;
@@ -11,7 +10,6 @@
   overflow: hidden;
 }
 
-/* Overlay with gradient + secondary land image */
 .hero::before {
   content: '';
   position: absolute;
@@ -21,12 +19,11 @@
   height: 100%;
   background:
     linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.5) 100%),
-    url('../images/background-01-land.png') center/cover no-repeat;
+    url('images/background-01-land.png') center/cover no-repeat;
   opacity: 0.6;
   z-index: 1;
 }
 
-/* Keep text and logos above overlay */
 .hero h1,
 .hero p,
 .hero .logo-text,
@@ -36,18 +33,16 @@
   z-index: 2;
 }
 
-/* Logo-text at top of header */
 .logo-text {
   width: 220px;
   display: block;
   margin: 0 auto 20px auto;
 }
 
-/* Flex container for small logo + title */
 .title-logo {
   display: inline-flex;
   align-items: center;
-  gap: 15px; /* space between logo and text */
+  gap: 15px;
   justify-content: center;
   margin-bottom: 10px;
 }
@@ -58,10 +53,35 @@
   margin: 0;
 }
 
-/* Small logo next to title */
 .logo-img {
   width: 60px;
   height: auto;
 }
 
+.recipe-content {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 0 20px;
+  line-height: 1.6;
+}
 
+.back-home a {
+  display: inline-block;
+  margin: 30px 0;
+  padding: 10px 15px;
+  background-color: #f4a261;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.back-home a:hover {
+  background-color: #e76f51;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #264653;
+  color: white;
+}
