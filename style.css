@@ -1,3 +1,11 @@
+/* ---------------- BODY ---------------- */
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: #f7f7f7;
+  color: #333;
+}
+
 /* ---------------- HERO HEADER ---------------- */
 .hero {
   position: relative;
@@ -10,21 +18,21 @@
   overflow: hidden;
 }
 
-/* Overlay on top of hero - 600x600px centered */
+/* Overlay on top of hero - 900x600px centered */
 .hero::before {
   content: '';
   position: absolute;
   top: 50%;                  
   left: 50%;                 
   transform: translate(-50%, -50%);
-  width: 600px;              
+  width: 900px;              
   height: 600px;             
   background: url('images/backgroundland.png') center/contain no-repeat;
   z-index: 1;                
   pointer-events: none;      
 }
 
-/* Text and logos above overlay */
+/* Hero Text & Logos */
 .hero h1,
 .hero p,
 .hero .logo-text,
@@ -49,17 +57,53 @@
 }
 
 .title-logo h1 {
+  font-family: 'Baloo 2', cursive;
   font-size: 3rem;
-  text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
+  text-shadow: 2px 2px 10px rgba(0,0,0,0.7);
   margin: 0;
+  animation: floatText 3s ease-in-out infinite alternate;
+  display: inline-block;
+  padding: 5px 15px;
+  background: rgba(0,0,0,0.35);
+  border-radius: 6px;
 }
 
-.logo-img {
-  width: 60px;
-  height: auto;
+.hero p {
+  font-size: 1.2rem;
+  text-shadow: 1px 1px 6px rgba(0,0,0,0.6);
+  display: inline-block;
+  padding: 5px 15px;
+  background: rgba(0,0,0,0.35);
+  border-radius: 6px;
 }
 
-/* ---------------- RECIPE LINKS ON TOP OF BACKGROUND02 ---------------- */
+/* Floating Animation for Hero Text */
+@keyframes floatText {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-8px); }
+}
+
+/* Hero CTA Button */
+.hero .cta-button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 25px;
+  font-size: 1.2rem;
+  background-color: #f4a261;
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+.hero .cta-button:hover {
+  background-color: #e76f51;
+  transform: translateY(-3px);
+  box-shadow: 0 0 20px rgba(231,111,81,0.8);
+}
+
+/* ---------------- RECIPE SECTION ---------------- */
 .background02-section {
   width: 100%;
   padding: 80px 20px;
@@ -70,6 +114,38 @@
   overflow: hidden;
 }
 
+/* Optional dark overlay for readability */
+.background02-section::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.3);
+  z-index: 0;
+}
+
+/* Optional soft fade at top of section */
+.background02-section::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100px;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0));
+  z-index: 1;
+}
+
+/* Recipe links stacked vertically */
+.recipe-links {
+  position: relative;
+  z-index: 2; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
 .recipe-links h2 {
   font-size: 2rem;
   margin-bottom: 30px;
@@ -77,31 +153,34 @@
   text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
 }
 
-.recipe-links .links {
-  display: flex;
-  flex-direction: column;   
-  align-items: center;
-  gap: 20px;                
-}
-
+/* Recipe Cards */
 .recipe-card {
-  width: 250px;             
+  width: 260px;
   text-align: center;
-  padding: 15px 20px;
-  background-color: rgba(244,162,97,0.9); /* slightly transparent */
+  padding: 20px;
+  background: linear-gradient(145deg, rgba(244,162,97,0.95), rgba(231,111,81,0.95));
   color: white;
   text-decoration: none;
-  border-radius: 5px;
-  transition: background-color 0.3s ease, transform 0.3s ease;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
 }
 
 .recipe-card i {
-  margin-right: 10px;
+  font-size: 2.5rem;
+  background: linear-gradient(45deg, #FFE8A1, #F4A261);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .recipe-card:hover {
-  background-color: rgba(231,111,81,0.9);
-  transform: translateY(-3px);
+  transform: scale(1.06) translateY(-6px);
+  box-shadow: 0 12px 24px rgba(231,111,81,0.6);
 }
 
 /* ---------------- FOOTER ---------------- */
@@ -111,6 +190,17 @@ footer {
   background-color: #264653;
   color: white;
   font-size: 0.9rem;
+}
+
+footer a {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+  transition: color 0.3s;
+}
+
+footer a:hover {
+  color: #f4a261;
 }
 
 
