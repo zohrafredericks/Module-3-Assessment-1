@@ -4,45 +4,29 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Recipe Book App</title>
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Header Section -->
   <header class="hero">
     <img src="images/logo-text.png" alt="Recipe Book Logo" class="logo-text">
-
     <div class="title-logo">
       <img src="images/logo-img.png" alt="Recipe Icon" class="logo-img">
       <h1>My Recipe Book</h1>
     </div>
-
     <p>Delicious recipes made simple!</p>
   </header>
 
-  <!-- Main Content: Recipe Cards -->
   <main>
     <section class="recipe-links">
       <h2>Explore Recipes</h2>
       <div class="links">
-        <a href="grilledcheesesandwich.html" class="recipe-card">
-          <img src="images/grilledcheese.jpg" alt="Grilled Cheese Sandwich">
-          <h3>Grilled Cheese Sandwich</h3>
-        </a>
-
-        <a href="strawberrymilkshake.html" class="recipe-card">
-          <img src="images/strawberrymilkshake.jpg" alt="Strawberry Milkshake">
-          <h3>Strawberry Milkshake</h3>
-        </a>
-
-        <a href="cookies.html" class="recipe-card">
-          <img src="images/cookies.jpg" alt="Cookies">
-          <h3>Cookies</h3>
-        </a>
+        <a href="grilledcheesesandwich.html" class="recipe-card">Grilled Cheese Sandwich</a>
+        <a href="strawberrymilkshake.html" class="recipe-card">Strawberry Milkshake</a>
+        <a href="cookies.html" class="recipe-card">Cookies</a>
       </div>
     </section>
   </main>
 
-  <!-- Footer -->
   <footer>
     <p id="footer-text">&copy; 2024 Recipe Book App | DESPOE2024</p>
   </footer>
@@ -50,13 +34,10 @@
   <script>
     const footer = document.getElementById("footer-text");
     const today = new Date();
-    const year = today.getFullYear();
-    const dateString = today.toDateString();
-    footer.innerHTML = `&copy; ${year} Recipe Book App | DESPOE2024<br>Today's date: ${dateString}`;
+    footer.innerHTML = `&copy; ${today.getFullYear()} Recipe Book App | DESPOE2024<br>Today's date: ${today.toDateString()}`;
   </script>
 </body>
 </html>
 
-     
- 
+
 
