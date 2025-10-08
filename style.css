@@ -11,11 +11,17 @@ body {
   position: relative;
   /* Restored background01.png as base */
   background-image: url('images/background01.png');
-  background-size: cover;
+  background-size: cover;       /* ensures image covers full area */
   background-position: center;
+  background-repeat: no-repeat; /* prevent tiling */
   text-align: center;
   color: white;
-  padding: 100px 20px;
+  min-height: 100vh;            /* fills entire viewport */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;      /* vertically center content */
+  align-items: center;
+  padding: 0 20px;              /* remove large top/bottom padding */
   overflow: hidden;
 }
 
@@ -31,6 +37,7 @@ body {
   background: url('images/backgroundland.png') center/contain no-repeat;
   z-index: 1;
   pointer-events: none;
+  animation: floatOverlay 6s ease-in-out infinite alternate; /* subtle floating */
 }
 
 /* Hero Text & Logos */
@@ -62,7 +69,6 @@ body {
   font-size: 3rem;
   text-shadow: 2px 2px 10px rgba(0,0,0,0.7);
   margin: 0;
-  animation: floatText 3s ease-in-out infinite alternate;
   display: inline-block;
   padding: 5px 15px;
   background: rgba(0,0,0,0.35);
@@ -84,6 +90,13 @@ body {
   100% { transform: translateY(-8px); }
 }
 
+/* Apply floatText animation to logos, paragraph, and button */
+.logo-text,
+.hero p,
+.hero .cta-button {
+  animation: floatText 4s ease-in-out infinite alternate;
+}
+
 /* Hero CTA Button */
 .hero .cta-button {
   display: inline-block;
@@ -102,6 +115,12 @@ body {
   background-color: #e76f51;
   transform: translateY(-3px);
   box-shadow: 0 0 20px rgba(231,111,81,0.8);
+}
+
+/* Floating Animation for overlay */
+@keyframes floatOverlay {
+  0% { transform: translate(-50%, -50%) translateY(0); }
+  100% { transform: translate(-50%, -50%) translateY(-15px); }
 }
 
 /* ---------------- RECIPE SECTION ---------------- */
@@ -203,4 +222,5 @@ footer a {
 footer a:hover {
   color: #f4a261;
 }
+
 
