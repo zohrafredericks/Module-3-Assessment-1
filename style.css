@@ -2,17 +2,19 @@
 body {
   margin: 0;
   font-family: 'Roboto', sans-serif;
-  background-color: #f7f7f7;
   color: #333;
+
+  /* Full-page background */
+  background-image: url('images/background01.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
 }
 
 /* ---------------- HERO HEADER ---------------- */
 .hero {
   position: relative;
-  background-image: url('images/background01.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
   text-align: center;
   color: white;
   min-height: 100vh;
@@ -39,19 +41,18 @@ body {
   animation: floatOverlay 6s ease-in-out infinite alternate;
 }
 
-/* Position and float logo-img diagonally across left corner of overlay */
+/* Position and float logo-img diagonally across the overlay */
 .hero .logo-img {
   position: absolute;
-  top: 30%;
+  top: 25%;
   left: 25%;
-  transform: rotate(-20deg);
   width: 120px;
   height: auto;
   z-index: 2;
   animation: floatOverlay 6s ease-in-out infinite alternate;
 }
 
-/* Responsive adjustments */
+/* Responsive adjustments for logo-img */
 @media (max-width: 1200px) {
   .hero .logo-img {
     width: 100px;
@@ -66,7 +67,7 @@ body {
 
 @media (max-width: 768px) {
   .hero .logo-img {
-    position: static;       /* stack under overlay on smaller screens */
+    position: static;
     display: block;
     margin: 20px auto 0 auto;
     transform: none;
@@ -97,15 +98,9 @@ body {
   margin-bottom: 10px;
 }
 
+/* Removed h1 in title-logo for cleaner overlay */
 .title-logo h1 {
-  font-family: 'Baloo 2', cursive;
-  font-size: 3rem;
-  text-shadow: 2px 2px 10px rgba(0,0,0,0.7);
-  margin: 0;
-  display: inline-block;
-  padding: 5px 15px;
-  background: rgba(0,0,0,0.35);
-  border-radius: 6px;
+  display: none;
 }
 
 .hero p {
@@ -163,14 +158,11 @@ body {
   position: relative;
   color: white;
   overflow: hidden;
-
-  /* remove any background or overlay */
-  background: none;
 }
 
+/* Remove overlay and fade from recipe section */
 .background02-section::before,
 .background02-section::after {
-  content: none;
   display: none;
 }
 
