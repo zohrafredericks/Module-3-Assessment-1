@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Strawberry Milkshake | My Recipe Book</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <!-- Header Section -->
+  <header class="hero">
+    <img src="assets/logo-text.png" alt="Recipe Book Logo" class="logo-text">
+
+    <div class="title-logo">
+      <img src="assets/logo-img.png" alt="Recipe Icon" class="logo-img">
+      <h1>My Recipe Book</h1>
+    </div>
+
+    <p>Delicious recipes made simple!</p>
+  </header>
+
+  <!-- Recipe Content -->
+  <main>
+    <section class="recipe-content">
+      <h2>Strawberry Milkshake</h2>
+      <p><em>Creamy strawberry milkshake</em></p>
+
+      <div class="recipe-info">
+        <p><strong>Prep time:</strong> 10 mins</p>
+        <p><strong>Yield:</strong> 4 servings</p>
+      </div>
+
+      <h3>Ingredients</h3>
+      <ul>
+        <li>8 ounces strawberries, stemmed and sliced</li>
+        <li>1/2 teaspoon vanilla extract</li>
+        <li>1 pint vanilla ice cream</li>
+        <li>1/4 cup milk</li>
+      </ul>
+
+      <h3>Steps</h3>
+      <ol>
+        <li>Blend half of strawberries, 1/4 tsp. vanilla, 1 cup ice cream and 2 Tbsp. milk in blender until smooth.</li>
+        <li>Pour into 2 glasses. Repeat with remaining strawberries, vanilla, ice cream and milk.</li>
+        <li>Serve immediately.</li>
+      </ol>
+    </section>
+
+    <!-- Back to Home Button -->
+    <div class="back-home">
+      <a href="index.html">← Back to Home</a>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p id="footer-text">&copy; 2024 Recipe Book App | DESPOE2024</p>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    // Add today's date to footer
+    const footer = document.getElementById("footer-text");
+    const today = new Date();
+    const year = today.getFullYear();
+    const dateString = today.toDateString();
+    footer.innerHTML = `&copy; ${year} Recipe Book App | DESPOE2024<br>Today's date: ${dateString}`;
+  </script>
+</body>
+</html>
