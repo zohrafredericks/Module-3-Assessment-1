@@ -1,4 +1,4 @@
-/* HERO HEADER */
+/* ---------------- HERO HEADER ---------------- */
 .hero {
   position: relative;
   background-image: url('images/background01.png'); /* base background */
@@ -14,12 +14,15 @@
 .hero::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: url('images/backgroundland.png') center/cover no-repeat;
+  top: 50px;                /* optional: offset to show base background */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;               /* smaller overlay to reveal background */
+  height: auto;
+  max-height: 300px;
+  background: url('images/backgroundland.png') center/contain no-repeat;
   z-index: 1;
+  pointer-events: none;     /* allows clicks through overlay */
 }
 
 /* Text and logos above background */
@@ -57,7 +60,7 @@
   height: auto;
 }
 
-/* SECTION BELOW HERO FOR background02.png */
+/* ---------------- SECTION BELOW HERO ---------------- */
 .background02-section {
   width: 100%;
   overflow: hidden;
@@ -68,10 +71,16 @@
   display: block;
 }
 
-/* RECIPE LINKS */
+/* ---------------- RECIPE LINKS ---------------- */
 .recipe-links {
   text-align: center;
   margin: 50px 0;
+}
+
+.recipe-links h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #264653;
 }
 
 .recipe-links .links {
@@ -88,18 +97,20 @@
   color: white;
   text-decoration: none;
   border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .recipe-card:hover {
   background-color: #e76f51;
+  transform: translateY(-3px);
 }
 
-/* FOOTER */
+/* ---------------- FOOTER ---------------- */
 footer {
   text-align: center;
   padding: 20px;
   background-color: #264653;
   color: white;
+  font-size: 0.9rem;
 }
 
-  
