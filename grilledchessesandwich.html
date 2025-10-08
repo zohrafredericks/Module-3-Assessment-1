@@ -4,22 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Grilled Cheese Sandwich | My Recipe Book</title>
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Header Section -->
   <header class="hero">
-    <img src="assets/logo-text.png" alt="Recipe Book Logo" class="logo-text">
-
+    <img src="images/logo-text.png" alt="Recipe Book Logo" class="logo-text">
     <div class="title-logo">
-      <img src="assets/logo-img.png" alt="Recipe Icon" class="logo-img">
+      <img src="images/logo-img.png" alt="Recipe Icon" class="logo-img">
       <h1>My Recipe Book</h1>
     </div>
-
     <p>Delicious recipes made simple!</p>
   </header>
 
-  <!-- Recipe Content -->
   <main>
     <section class="recipe-content">
       <h2>Grilled Cheese Sandwich</h2>
@@ -47,25 +43,20 @@
       </ol>
     </section>
 
-    <!-- Back to Home Button -->
     <div class="back-home">
       <a href="index.html">← Back to Home</a>
     </div>
   </main>
 
-  <!-- Footer -->
   <footer>
     <p id="footer-text">&copy; 2024 Recipe Book App | DESPOE2024</p>
   </footer>
 
-  <!-- JavaScript -->
   <script>
-    // Add today's date to footer
     const footer = document.getElementById("footer-text");
     const today = new Date();
-    const year = today.getFullYear();
-    const dateString = today.toDateString();
-    footer.innerHTML = `&copy; ${year} Recipe Book App | DESPOE2024<br>Today's date: ${dateString}`;
+    footer.innerHTML = `&copy; ${today.getFullYear()} Recipe Book App | DESPOE2024<br>Today's date: ${today.toDateString()}`;
   </script>
 </body>
 </html>
+
