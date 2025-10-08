@@ -10,19 +10,19 @@
   overflow: hidden;
 }
 
-/* Overlay on top of hero */
+/* Overlay on top of hero - smaller so base shows */
 .hero::before {
   content: '';
   position: absolute;
-  top: 50px;                /* optional: offset to show base background */
-  left: 50%;
+  top: 50px;                 /* optional offset to show base background */
+  left: 50%;                 /* center horizontally */
   transform: translateX(-50%);
-  width: 80%;               /* smaller overlay to reveal background */
+  width: 80%;                /* smaller than full width */
   height: auto;
-  max-height: 300px;
+  max-height: 300px;         /* optional max height */
   background: url('images/backgroundland.png') center/contain no-repeat;
   z-index: 1;
-  pointer-events: none;     /* allows clicks through overlay */
+  pointer-events: none;      /* allows clicks through overlay */
 }
 
 /* Text and logos above background */
@@ -71,7 +71,7 @@
   display: block;
 }
 
-/* ---------------- RECIPE LINKS ---------------- */
+/* ---------------- RECIPE LINKS (VERTICAL STACK) ---------------- */
 .recipe-links {
   text-align: center;
   margin: 50px 0;
@@ -85,13 +85,15 @@
 
 .recipe-links .links {
   display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
+  flex-direction: column;   /* stack vertically */
+  align-items: center;      /* center horizontally */
+  gap: 20px;                /* spacing between cards */
+  flex-wrap: nowrap;        /* no wrapping */
 }
 
 .recipe-card {
-  display: inline-block;
+  width: 250px;             /* fixed width for neat vertical stack */
+  text-align: center;
   padding: 15px 20px;
   background-color: #f4a261;
   color: white;
@@ -113,4 +115,3 @@ footer {
   color: white;
   font-size: 0.9rem;
 }
-
