@@ -9,7 +9,7 @@ body {
 /* ---------------- HERO HEADER ---------------- */
 .hero {
   position: relative;
-  background-image: url('images/background01.png'); /* base background */
+  /* Removed background01.png */
   background-size: cover;
   background-position: center;
   text-align: center;
@@ -22,14 +22,14 @@ body {
 .hero::before {
   content: '';
   position: absolute;
-  top: 50%;                  
-  left: 50%;                 
+  top: 50%;
+  left: 50%;
   transform: translate(-50%, -50%);
-  width: 900px;              
-  height: 600px;             
+  width: 900px;
+  height: 600px;
   background: url('images/backgroundland.png') center/contain no-repeat;
-  z-index: 1;                
-  pointer-events: none;      
+  z-index: 1;
+  pointer-events: none;
 }
 
 /* Hero Text & Logos */
@@ -39,7 +39,7 @@ body {
 .hero .logo-img,
 .hero .title-logo {
   position: relative;
-  z-index: 2;                
+  z-index: 2;
 }
 
 .logo-text {
@@ -139,7 +139,7 @@ body {
 /* Recipe links stacked vertically */
 .recipe-links {
   position: relative;
-  z-index: 2; 
+  z-index: 2;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -202,5 +202,8 @@ footer a {
 footer a:hover {
   color: #f4a261;
 }
+
+
+
 
 
