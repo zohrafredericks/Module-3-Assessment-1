@@ -41,7 +41,6 @@ body {
   animation: floatOverlay 6s ease-in-out infinite alternate;
 }
 
-
 /* logo-img.png positioned diagonally over top-left corner of overlay, 2cm lower */
 .hero .logo-img {
   position: absolute;
@@ -56,7 +55,6 @@ body {
 
 /* Hero Logos & Paragraph */
 .hero h1,
-.hero p,
 .hero .logo-text,
 .hero .title-logo {
   position: relative;
@@ -72,15 +70,19 @@ body {
 
 /* Tagline - "Delicious recipes made simple!" */
 .hero p {
+  position: absolute; /* precise placement */
+  top: calc(50% + 2cm + 1cm); /* overlay top + 1cm below */
+  left: 50%;
+  transform: translateX(-50%);
   font-size: 1.5rem;
   font-family: 'Pacifico', cursive; /* stylish script font */
   color: #fff5e6;
   text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
-  display: inline-block;
   padding: 8px 18px;
   background: rgba(0,0,0,0.25);
   border-radius: 6px;
   animation: floatText 4s ease-in-out infinite alternate;
+  z-index: 2;
 }
 
 /* Floating Animations */
@@ -147,7 +149,12 @@ body {
   }
 
   .hero p {
+    position: relative;
+    top: auto;
+    transform: none;
     font-size: 1.2rem;
+    padding: 6px 12px;
+    margin-top: 1rem; /* space below overlay */
   }
 }
 
@@ -236,7 +243,3 @@ footer a {
 footer a:hover {
   color: #f4a261;
 }
-
-
-
-
