@@ -41,11 +41,11 @@ body {
   animation: floatOverlay 6s ease-in-out infinite alternate;
 }
 
-/* logo-img.png positioned diagonally over top-left corner of overlay */
+/* logo-img.png positioned diagonally over top-left corner of overlay, 2cm lower */
 .hero .logo-img {
   position: absolute;
-  top: 20%;           /* vertical position */
-  left: 20%;          /* horizontal position */
+  top: calc(20% + 2cm);   /* moved 2cm down */
+  left: 20%;              /* horizontal position */
   transform: rotate(-20deg); /* diagonal rotation */
   width: 120px;
   height: auto;
