@@ -79,10 +79,11 @@ body {
   z-index: 2;
 }
 
+/* Move logo-text (My Recipe Book) up ~8cm */
 .logo-text {
   width: 220px;
   display: block;
-  margin: 0 auto 20px auto;
+  margin: -8cm auto 20px auto; /* moved up */
 }
 
 .title-logo {
@@ -228,5 +229,4 @@ footer a {
 footer a:hover {
   color: #f4a261;
 }
-
 
