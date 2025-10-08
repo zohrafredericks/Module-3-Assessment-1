@@ -17,7 +17,7 @@ body {
   position: relative;
   text-align: center;
   color: white;
-  min-height: 100vh;
+  min-height: 90vh; /* reduced from 100vh */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -228,4 +228,5 @@ footer a {
 footer a:hover {
   color: #f4a261;
 }
+
 
