@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recipe Book App</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <!-- Header Section -->
+  <header class="hero">
+    <!-- Main logo text at top -->
+    <img src="assets/logo-text.png" alt="Recipe Book Logo" class="logo-text">
+
+    <!-- Logo + title container -->
+    <div class="title-logo">
+      <img src="assets/logo-img.png" alt="Recipe Icon" class="logo-img">
+      <h1>My Recipe Book</h1>
+    </div>
+
+    <p>Delicious recipes made simple!</p>
+  </header>
+
+  <!-- Main Content: Recipe Cards -->
+  <main>
+    <section class="recipe-links">
+      <h2>Explore Recipes</h2>
+      <div class="links">
+        <a href="grilledcheesesandwich.html" class="recipe-card">
+          <img src="assets/grilledcheese.jpg" alt="Grilled Cheese Sandwich">
+          <h3>Grilled Cheese Sandwich</h3>
+        </a>
+
+        <a href="strawberrymilkshake.html" class="recipe-card">
+          <img src="assets/strawberrymilkshake.jpg" alt="Strawberry Milkshake">
+          <h3>Strawberry Milkshake</h3>
+        </a>
+
+        <a href="cookies.html" class="recipe-card">
+          <img src="assets/cookies.jpg" alt="Cookies">
+          <h3>Cookies</h3>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p id="footer-text">&copy; 2024 Recipe Book App | DESPOE2024</p>
+  </footer>
+
+  <!-- Optional JavaScript -->
+  <script>
+    // Add today's date to footer
+    const footer = document.getElementById("footer-text");
+    const today = new Date();
+    const year = today.getFullYear();
+    const dateString = today.toDateString();
+    footer.innerHTML = `&copy; ${year} Recipe Book App | DESPOE2024<br>Today's date: ${dateString}`;
+
+    // Recipe card click alert
+    const cards = document.querySelectorAll(".recipe-card");
+    cards.forEach(card => {
+      card.addEventListener("click", () => {
+        alert(`You are opening the recipe: ${card.textContent}`);
+      });
+    });
+  </script>
+</body>
+</html>
