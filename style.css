@@ -26,13 +26,13 @@ body {
   overflow: hidden;
 }
 
-/* Overlay on top of hero - 900x600px centered */
+/* Overlay on top of hero (backgroundland.png) - centered, not rotated */
 .hero::before {
   content: '';
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); /* center */
   width: 900px;
   height: 600px;
   background: url('images/backgroundland.png') center/contain no-repeat;
@@ -41,12 +41,12 @@ body {
   animation: floatOverlay 6s ease-in-out infinite alternate;
 }
 
-/* Position logo-img over top-left corner of overlay diagonally */
+/* logo-img.png positioned diagonally over top-left corner of overlay */
 .hero .logo-img {
   position: absolute;
-  top: calc(50% - 300px);   /* 50% minus half overlay height */
-  left: calc(50% - 450px);  /* 50% minus half overlay width */
-  transform: rotate(-20deg);
+  top: 20%;           /* vertical position */
+  left: 20%;          /* horizontal position */
+  transform: rotate(-20deg); /* diagonal rotation */
   width: 120px;
   height: auto;
   z-index: 2;
@@ -55,24 +55,14 @@ body {
 
 /* Responsive adjustments for logo-img */
 @media (max-width: 1200px) {
-  .hero .logo-img {
-    width: 100px;
-    top: calc(50% - 300px);
-    left: calc(50% - 450px);
-  }
+  .hero .logo-img { width: 100px; }
 }
-
 @media (max-width: 992px) {
-  .hero .logo-img {
-    width: 90px;
-    top: calc(50% - 300px);
-    left: calc(50% - 450px);
-  }
+  .hero .logo-img { width: 90px; }
 }
-
 @media (max-width: 768px) {
   .hero .logo-img {
-    position: static;       /* stack under overlay on smaller screens */
+    position: static;
     display: block;
     margin: 20px auto 0 auto;
     transform: none;
@@ -104,9 +94,7 @@ body {
 }
 
 /* Removed h1 in title-logo for cleaner overlay */
-.title-logo h1 {
-  display: none;
-}
+.title-logo h1 { display: none; }
 
 .hero p {
   font-size: 1.2rem;
@@ -124,8 +112,8 @@ body {
 }
 
 @keyframes floatOverlay {
-  0% { transform: translate(-50%, -50%) translateY(0) rotate(-20deg); }
-  100% { transform: translate(-50%, -50%) translateY(-15px) rotate(-20deg); }
+  0% { transform: translate(-50%, -50%) translateY(0); }
+  100% { transform: translate(-50%, -50%) translateY(-15px); }
 }
 
 /* Apply floatText animation to logos, paragraph, and button */
@@ -240,13 +228,4 @@ footer a {
 footer a:hover {
   color: #f4a261;
 }
-
-
-
-
-
-
-
-
-
 
