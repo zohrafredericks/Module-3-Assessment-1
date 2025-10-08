@@ -1,15 +1,16 @@
-/* Header with layered backgrounds for index and recipe pages */
+/* HERO HEADER */
 .hero {
   position: relative;
-  background-image: url('images/background-02-land.png'), url('images/background-02-port.png');
-  background-size: cover, cover;
-  background-position: center, center;
+  background-image: url('images/background01.png'); /* base background */
+  background-size: cover;
+  background-position: center;
   text-align: center;
   color: white;
   padding: 100px 20px;
   overflow: hidden;
 }
 
+/* Overlay on top of hero */
 .hero::before {
   content: '';
   position: absolute;
@@ -17,13 +18,11 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background:
-    linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.5) 100%),
-    url('images/background-01-land.png') center/cover no-repeat;
-  opacity: 0.6;
+  background: url('images/backgroundland.png') center/cover no-repeat;
   z-index: 1;
 }
 
+/* Text and logos above background */
 .hero h1,
 .hero p,
 .hero .logo-text,
@@ -58,30 +57,49 @@
   height: auto;
 }
 
-.recipe-content {
-  max-width: 800px;
-  margin: 50px auto;
-  padding: 0 20px;
-  line-height: 1.6;
+/* SECTION BELOW HERO FOR background02.png */
+.background02-section {
+  width: 100%;
+  overflow: hidden;
 }
 
-.back-home a {
+.background02-section img {
+  width: 100%;
+  display: block;
+}
+
+/* RECIPE LINKS */
+.recipe-links {
+  text-align: center;
+  margin: 50px 0;
+}
+
+.recipe-links .links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.recipe-card {
   display: inline-block;
-  margin: 30px 0;
-  padding: 10px 15px;
+  padding: 15px 20px;
   background-color: #f4a261;
   color: white;
   text-decoration: none;
   border-radius: 5px;
 }
 
-.back-home a:hover {
+.recipe-card:hover {
   background-color: #e76f51;
 }
 
+/* FOOTER */
 footer {
   text-align: center;
   padding: 20px;
   background-color: #264653;
   color: white;
 }
+
+  
