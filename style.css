@@ -39,13 +39,13 @@ body {
   animation: floatOverlay 6s ease-in-out infinite alternate;
 }
 
-/* Logo image diagonally on top-left of overlay */
+/* Position and float logo-img diagonally across left corner of overlay */
 .hero .logo-img {
   position: absolute;
-  top: 20%;                 
-  left: 10%;                
-  transform: rotate(-25deg); 
-  width: 100px;             
+  top: 30%;
+  left: 25%;
+  transform: rotate(-20deg);
+  width: 120px;
   height: auto;
   z-index: 2;
   animation: floatOverlay 6s ease-in-out infinite alternate;
@@ -54,15 +54,19 @@ body {
 /* Responsive adjustments */
 @media (max-width: 1200px) {
   .hero .logo-img {
+    width: 100px;
+  }
+}
+
+@media (max-width: 992px) {
+  .hero .logo-img {
     width: 90px;
-    top: 18%;
-    left: 8%;
   }
 }
 
 @media (max-width: 768px) {
   .hero .logo-img {
-    position: static;       
+    position: static;       /* stack under overlay on smaller screens */
     display: block;
     margin: 20px auto 0 auto;
     transform: none;
@@ -159,11 +163,14 @@ body {
   position: relative;
   color: white;
   overflow: hidden;
+
+  /* remove any background or overlay */
+  background: none;
 }
 
-/* Removed overlay and fade */
 .background02-section::before,
 .background02-section::after {
+  content: none;
   display: none;
 }
 
@@ -232,4 +239,8 @@ footer a:hover {
   color: #f4a261;
 }
 
-  
+
+
+
+
+
