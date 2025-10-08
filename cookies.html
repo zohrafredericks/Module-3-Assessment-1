@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cookies | My Recipe Book</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <!-- Header Section -->
+  <header class="hero">
+    <img src="assets/logo-text.png" alt="Recipe Book Logo" class="logo-text">
+
+    <div class="title-logo">
+      <img src="assets/logo-img.png" alt="Recipe Icon" class="logo-img">
+      <h1>My Recipe Book</h1>
+    </div>
+
+    <p>Delicious recipes made simple!</p>
+  </header>
+
+  <!-- Recipe Content -->
+  <main>
+    <section class="recipe-content">
+      <h2>Cookies</h2>
+      <p><em>Pecan, raisin and cinnamon cookies</em></p>
+
+      <div class="recipe-info">
+        <p><strong>Prep time:</strong> 30 mins</p>
+        <p><strong>Yield:</strong> 5 ½ dozen</p>
+      </div>
+
+      <h3>Ingredients</h3>
+      <ul>
+        <li>1 cup butter or margarine, softened</li>
+        <li>1 1/2 cups firmly packed brown sugar</li>
+        <li>3 eggs</li>
+        <li>3 tablespoons strong coffee</li>
+        <li>2 1/2 cups all-purpose flour</li>
+        <li>1 teaspoon baking soda</li>
+        <li>1 tablespoon ground cinnamon</li>
+        <li>1 tablespoon ground allspice</li>
+        <li>1 cup raisins</li>
+        <li>1 cup chopped pecans</li>
+      </ul>
+
+      <h3>Steps</h3>
+      <ol>
+        <li>Cream butter in a large mixing bowl; gradually add sugar, beating until light and fluffy. Add eggs, one at a time, beating well after each addition. Add coffee, stirring well.</li>
+        <li>Combine flour, soda, cinnamon, and allspice in a large mixing bowl. Stir in raisins and pecans to coat well; add to creamed mixture.</li>
+        <li>Drop dough by heaping teaspoonfuls 2 inches apart onto greased cookie sheets. Bake at 350° for 8 minutes. Remove from cookie sheets, and cool on wire racks.</li>
+      </ol>
+    </section>
+
+    <!-- Back to Home Button -->
+    <div class="back-home">
+      <a href="index.html">← Back to Home</a>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p id="footer-text">&copy; 2024 Recipe Book App | DESPOE2024</p>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    // Add today's date to footer
+    const footer = document.getElementById("footer-text");
+    const today = new Date();
+    const year = today.getFullYear();
+    const dateString = today.toDateString();
+    footer.innerHTML = `&copy; ${year} Recipe Book App | DESPOE2024<br>Today's date: ${dateString}`;
+  </script>
+</body>
+</html>
