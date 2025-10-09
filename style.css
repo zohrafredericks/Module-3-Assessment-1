@@ -48,16 +48,16 @@ body {
   100% { transform: translate(-50%, -50%) translateY(7.5px); }
 }
 
-/* Logo Image */
 .logo-img {
   position: absolute;
-  top: calc(20% + 2cm);
+  top: calc(20% + 5cm); /* 2cm + 3cm = 5cm */
   left: calc(20% + 2.5cm);
   transform: rotate(-20deg);
   width: 120px;
   z-index: 2;
   animation: floatOverlay 3s ease-in-out infinite alternate;
 }
+
 
 /* Logo Text */
 .logo-text {
@@ -200,6 +200,7 @@ footer {
 
 
   
+
 
 
 
