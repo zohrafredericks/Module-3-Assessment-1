@@ -11,8 +11,14 @@
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
 
-  <!-- CSS with versioning to prevent caching -->
-  <link rel="stylesheet" href="style.css?v=1.0">
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css" id="main-style">
+
+  <!-- Dynamic CSS versioning to force latest file -->
+  <script>
+    const link = document.getElementById('main-style');
+    link.href = link.href.split('?')[0] + '?v=' + new Date().getTime();
+  </script>
 </head>
 <body>
 
@@ -24,7 +30,7 @@
     <!-- Logo Image -->
     <img src="images/logo-img.png" alt="Recipe Icon" class="logo-img">
 
-    <!-- Tagline 1cm below backgroundland.png -->
+    <!-- Tagline -->
     <div class="tagline-container">
       <p>Delicious recipes made simple!</p>
     </div>
@@ -63,16 +69,10 @@
     footer.innerHTML = `&copy; ${today.getFullYear()} My Recipe Book | DESPOE2024<br>Today's date: ${today.toDateString()}`;
   </script>
 
-  <!-- Optional: auto-version CSS to prevent caching -->
-  <script>
-    const link = document.querySelector('link[rel="stylesheet"]');
-    link.href = link.href.split('?')[0] + '?v=' + new Date().getTime();
-  </script>
-
 </body>
 </html>
 
-   
+
 
 
 
