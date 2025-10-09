@@ -10,250 +10,197 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   min-height: 100vh;
+  height: 100%;
 }
 
-/* ---------------- HERO HEADER ---------------- */
+/* ---------------- HERO SECTION ---------------- */
 .hero {
   position: relative;
-  text-align: center;
-  color: white;
-  min-height: 90vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  min-height: 90vh;
   padding: 0 20px;
-  overflow: hidden;
+  overflow: visible;
 }
 
-/* Overlay on top of hero (backgroundland.png) - centered, not rotated */
+/* Hero Overlay */
 .hero::before {
-  content: '';
+  content: "";
   position: absolute;
-  top: calc(50% + 2cm); /* overlay moved down */
+  top: calc(50% + 2cm);
   left: 50%;
   transform: translate(-50%, -50%);
   width: 900px;
   height: 600px;
-  background: url('images/backgroundland.png') center/contain no-repeat;
+  background-image: url('images/backgroundland.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
   z-index: 1;
-  pointer-events: none;
-  animation: floatOverlay 6s ease-in-out infinite alternate;
+  animation: floatOverlay 3s ease-in-out infinite alternate;
 }
 
-/* logo-img.png — moved 2.5cm right and 2cm down */
-.hero .logo-img {
+/* Floating animation for overlay */
+@keyframes floatOverlay {
+  0% { transform: translate(-50%, -50%) translateY(-7.5px); }
+  100% { transform: translate(-50%, -50%) translateY(7.5px); }
+}
+
+/* Logo Image */
+.logo-img {
   position: absolute;
-  top: calc(20% + 2cm); /* 2cm down */
-  left: calc(20% + 2.5cm); /* 2.5cm right */
+  top: calc(20% + 2cm);
+  left: calc(20% + 2.5cm);
   transform: rotate(-20deg);
   width: 120px;
-  height: auto;
   z-index: 2;
-  animation: floatOverlay 6s ease-in-out infinite alternate;
+  animation: floatOverlay 3s ease-in-out infinite alternate;
 }
 
-/* Hero Logos */
-.hero h1,
-.hero .logo-text,
-.hero .title-logo {
-  position: relative;
-  z-index: 2;
-}
-
-/* logo-text.png — moved 3cm down */
+/* Logo Text */
 .logo-text {
   width: 220px;
-  display: block;
-  margin: -5cm auto 20px auto; /* adjusted from -8cm to -5cm */
+  margin: -5cm auto 20px auto;
+  z-index: 2;
 }
 
-/* Tagline - always 1cm below backgroundland.png */
-.hero .tagline-container {
+/* Tagline */
+.tagline-container p {
   position: absolute;
-  top: calc(50% + 2cm + 300px + 1cm); /* center + overlay shift + half overlay height + 1cm below */
+  top: calc(50% + 2cm + 300px + 1cm);
   left: 50%;
   transform: translateX(-50%);
-  z-index: 3; /* above logo-img */
+  background: rgba(0,0,0,0.25);
+  padding: 8px 18px;
+  border-radius: 6px;
+  font-family: 'Pacifico', cursive;
+  font-size: 1.5rem;
+  z-index: 3;
+  color: #fff;
   text-align: center;
 }
 
-.hero .tagline-container p {
-  font-size: 1.5rem;
-  font-family: 'Pacifico', cursive;
-  color: #fff5e6;
-  text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+/* CTA Button */
+.cta-button {
   display: inline-block;
-  padding: 8px 18px;
-  background: rgba(0,0,0,0.25);
-  border-radius: 6px;
-  animation: floatText 4s ease-in-out infinite alternate;
-}
-
-/* Floating Animations */
-@keyframes floatText {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(-8px); }
-}
-
-@keyframes floatOverlay {
-  0% { transform: translate(-50%, -50%) translateY(0); }
-  100% { transform: translate(-50%, -50%) translateY(-15px); }
-}
-
-/* Hero CTA Button */
-.hero .cta-button {
-  display: inline-block;
-  margin-top: 20px;
   padding: 12px 25px;
   font-size: 1.2rem;
   background-color: #f4a261;
-  color: white;
+  border: none;
   border-radius: 8px;
-  text-decoration: none;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
-  animation: floatText 4s ease-in-out infinite alternate;
+  margin-top: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
-
-.hero .cta-button:hover {
+.cta-button:hover {
   background-color: #e76f51;
   transform: translateY(-3px);
-  box-shadow: 0 0 20px rgba(231,111,81,0.8);
-}
-
-/* ---------------- RESPONSIVE FIXES ---------------- */
-@media (max-width: 1200px) {
-  .hero .logo-img { width: 100px; }
-}
-
-@media (max-width: 992px) {
-  .hero .logo-img { width: 90px; }
-}
-
-@media (max-width: 768px) {
-  .hero {
-    min-height: 80vh;
-    padding-top: 40px;
-  }
-
-  .hero::before {
-    width: 600px;
-    height: 400px;
-    top: calc(50% + 1cm); /* adjust overlay for mobile */
-  }
-
-  .hero .logo-img {
-    position: relative;
-    display: block;
-    margin: 0 auto 10px auto;
-    transform: rotate(-10deg);
-    width: 80px;
-  }
-
-  .logo-text {
-    margin: -5cm auto 10px auto;
-    width: 180px;
-  }
-
-  .hero .tagline-container {
-    position: relative;
-    top: 10px;
-    transform: none;
-  }
-
-  .hero .tagline-container p {
-    font-size: 1.2rem;
-  }
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
 }
 
 /* ---------------- RECIPE SECTION ---------------- */
-.background02-section {
-  width: 100%;
-  padding: 80px 20px;
-  text-align: center;
+.recipe-links h2 {
+  font-family: 'Baloo 2', cursive;
+  font-size: 2.5rem;
+  color: #f4a261;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 40px;
   position: relative;
-  color: white;
-  overflow: hidden;
+}
+.recipe-links h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background-color: #f4a261;
+  margin: 8px auto 0 auto;
+  transition: width 0.3s;
+}
+.recipe-links h2:hover::after {
+  width: 80px;
 }
 
-.background02-section::before,
-.background02-section::after {
-  display: none;
-}
-
-.recipe-links {
-  position: relative;
-  z-index: 2;
+/* Recipe Cards */
+.recipe-card {
+  width: 260px;
+  padding: 20px;
+  background: linear-gradient(to bottom, rgba(244,162,97,0.95), rgba(231,111,81,0.95));
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
-}
-
-.recipe-links h2 {
-  font-size: 2rem;
-  margin-bottom: 30px;
-  color: #f4a261;
-  text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
-}
-
-.recipe-card {
-  width: 260px;
-  text-align: center;
-  padding: 20px;
-  background: linear-gradient(145deg, rgba(244,162,97,0.95), rgba(231,111,81,0.95));
-  color: white;
-  text-decoration: none;
-  border-radius: 12px;
+  gap: 12px;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-  font-weight: 500;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
 }
-
-.recipe-card i {
-  font-size: 2.5rem;
-  background: linear-gradient(45deg, #FFE8A1, #F4A261);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
 .recipe-card:hover {
   transform: scale(1.06) translateY(-6px);
   box-shadow: 0 12px 24px rgba(231,111,81,0.6);
 }
 
-/* ---------------- FOOTER ---------------- */
-footer {
-  text-align: center;
-  padding: 20px;
-  background-color: #264653;
-}
-
-footer p {
-  color: #f4a261;
-  font-size: 0.9rem;
-  line-height: 1.4;
-  margin: 0;
-}
-
-footer a {
-  color: white;
-  text-decoration: none;
-  margin: 0 10px;
+/* Font Awesome Icons */
+.recipe-card i {
+  font-size: 2.5rem;
+  color: #264653;
   transition: color 0.3s;
 }
-
-footer a:hover {
-  color: #f4a261;
+.recipe-card i:hover {
+  color: #e76f51;
 }
+
+/* Recipe Title Highlight */
+.recipe-card span {
+  padding: 4px 10px;
+  background: rgba(255,255,255,0.15);
+  border-radius: 6px;
+  display: inline-block;
+  transition: background 0.3s;
+}
+.recipe-card span:hover {
+  background: rgba(255,255,255,0.3);
+}
+
+/* ---------------- FOOTER ---------------- */
+footer {
+  background-color: #264653;
+  color: #f4a261;
+  padding: 20px;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+/* ---------------- RESPONSIVE ---------------- */
+@media (max-width: 1200px) {
+  .logo-img { width: 100px; }
+}
+
+@media (max-width: 992px) {
+  .logo-img { width: 90px; }
+}
+
+@media (max-width: 768px) {
+  .hero { min-height: 80vh; }
+  .hero::before { width: 600px; height: 400px; }
+  .logo-img { width: 80px; }
+  .logo-text { width: 180px; }
+  .tagline-container p { font-size: 1.2rem; }
+  .recipe-links h2 { font-size: 2rem; }
+  .recipe-card { width: 90%; padding: 15px; }
+  .recipe-card i { font-size: 2rem; }
+  .recipe-card span { padding: 3px 8px; }
+}
+
+
+
+
 
 
   
+
 
 
 
