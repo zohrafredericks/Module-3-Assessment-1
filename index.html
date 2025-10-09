@@ -3,70 +3,77 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Masala Chai Cape Town</title>
+  <title>My Recipe Book</title>
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Baloo+2:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700&family=Roboto:wght@400;500&family=Pacifico&display=swap" rel="stylesheet">
 
-  <!-- Font Awesome for icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-wx2XlwS4VhGd1U5qJgWnRGN+zGvl/hVWhGvdY4vU6k6iEwULmO2K7g1R3L0hX2nZ9ZQpP4Vli+qG3VqibWdlXw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
 
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="css/style.css">
+  <!-- CSS with versioning to prevent caching -->
+  <link rel="stylesheet" href="style.css?v=1.0">
 </head>
 <body>
 
-  <!-- ---------------- HERO SECTION ---------------- -->
+  <!-- HERO HEADER -->
   <header class="hero">
-    <!-- Overlay handled by CSS ::before -->
+    <!-- Logo Text -->
+    <img src="images/logo-text.png" alt="Recipe Book Logo" class="logo-text">
 
     <!-- Logo Image -->
-    <img src="images/logo-img.png" alt="Logo" class="logo-img">
+    <img src="images/logo-img.png" alt="Recipe Icon" class="logo-img">
 
-    <!-- Logo Text -->
-    <img src="images/logo-text.png" alt="Logo Text" class="logo-text">
-
-    <!-- Tagline -->
+    <!-- Tagline 1cm below backgroundland.png -->
     <div class="tagline-container">
       <p>Delicious recipes made simple!</p>
     </div>
 
-    <!-- CTA Button -->
-    <a href="#recipes" class="cta-button">Explore Recipes</a>
+    <!-- Call-to-action button -->
+    <a href="#recipes" class="cta-button">Start Cooking</a>
   </header>
 
-  <!-- ---------------- RECIPE SECTION ---------------- -->
-  <section id="recipes" class="recipe-links">
-    <h2>Our Recipes</h2>
+  <!-- RECIPE LINKS -->
+  <main>
+    <section class="recipe-links background02-section" id="recipes">
+      <h2>Explore Recipes</h2>
+      <div class="links">
+        <a href="grilledcheesesandwich.html" class="recipe-card">
+          <i class="fas fa-cheese"></i> Grilled Cheese Sandwich
+        </a>
+        <a href="strawberrymilkshake.html" class="recipe-card">
+          <i class="fas fa-cocktail"></i> Strawberry Milkshake
+        </a>
+        <a href="cookies.html" class="recipe-card">
+          <i class="fas fa-cookie-bite"></i> Cookies
+        </a>
+      </div>
+    </section>
+  </main>
 
-    <div class="recipe-card">
-      <i class="fas fa-utensils"></i>
-      <span>Chicken Curry</span>
-    </div>
-
-    <div class="recipe-card">
-      <i class="fas fa-leaf"></i>
-      <span>Vegetable Stir Fry</span>
-    </div>
-
-    <div class="recipe-card">
-      <i class="fas fa-fish"></i>
-      <span>Grilled Fish</span>
-    </div>
-
-    <div class="recipe-card">
-      <i class="fas fa-bread-slice"></i>
-      <span>Fresh Bread</span>
-    </div>
-  </section>
-
-  <!-- ---------------- FOOTER ---------------- -->
+  <!-- FOOTER -->
   <footer>
-    &copy; 2025 Masala Chai Cape Town. All rights reserved.
+    <p id="footer-text">&copy; 2025 My Recipe Book | DESPOE2024</p>
   </footer>
+
+  <!-- Dynamic Footer JS -->
+  <script>
+    const footer = document.getElementById("footer-text");
+    const today = new Date();
+    footer.innerHTML = `&copy; ${today.getFullYear()} My Recipe Book | DESPOE2024<br>Today's date: ${today.toDateString()}`;
+  </script>
+
+  <!-- Optional: auto-version CSS to prevent caching -->
+  <script>
+    const link = document.querySelector('link[rel="stylesheet"]');
+    link.href = link.href.split('?')[0] + '?v=' + new Date().getTime();
+  </script>
 
 </body>
 </html>
+
+   
+
 
 
 
