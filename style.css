@@ -29,7 +29,7 @@ body {
 .hero::before {
   content: "";
   position: absolute;
-  top: calc(50% + 2cm);
+  top: calc(50% - 1cm); /* moved up 3cm */
   left: 50%;
   transform: translate(-50%, -50%);
   width: 900px;
@@ -51,7 +51,7 @@ body {
 /* Logo Image */
 .logo-img {
   position: absolute;
-  top: calc(20% + 5cm); /* moved down 3cm */
+  top: calc(20% + 5cm); /* moved down 3cm previously */
   left: calc(20% + 2.5cm);
   transform: rotate(-20deg);
   width: 120px;
@@ -102,12 +102,15 @@ body {
 
 /* ---------------- RECIPE SECTION ---------------- */
 .recipe-links {
-  font-family: 'Baloo 2', cursive; /* ensure all text in recipe section uses Baloo 2 */
-  text-align: center;
-  margin-top: 1cm; /* moves section below tagline */
+  position: relative; /* keeps section in normal flow */
+  margin-top: 1cm;    /* moves entire section 1cm below the tagline */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .recipe-links h2 {
+  font-family: 'Baloo 2', cursive;
   font-size: 2.5rem;
   color: #f4a261;
   text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
@@ -141,8 +144,6 @@ body {
   align-items: center;
   gap: 12px;
   transition: all 0.3s ease;
-  font-family: 'Baloo 2', cursive; /* apply nice font */
-  text-align: center;
 }
 .recipe-card:hover {
   transform: scale(1.06) translateY(-6px);
@@ -195,6 +196,7 @@ footer {
   .logo-img { width: 80px; }
   .logo-text { width: 180px; }
   .tagline-container p { font-size: 1.2rem; }
+  .recipe-links { margin-top: 0.5cm; } /* responsive adjustment */
   .recipe-links h2 { font-size: 2rem; }
   .recipe-card { width: 90%; padding: 15px; }
   .recipe-card i { font-size: 2rem; }
