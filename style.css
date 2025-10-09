@@ -1,4 +1,18 @@
-/* ---------------- HERO HEADER FINE-TUNED ---------------- */
+/* ---------------- BODY ---------------- */
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  color: #333;
+
+  /* Full-page background */
+  background-image: url('images/background01.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}
+
+/* ---------------- HERO HEADER ---------------- */
 .hero {
   position: relative;
   text-align: center;
@@ -6,17 +20,17 @@
   min-height: 90vh;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start; /* align items from top for better spacing */
+  justify-content: center;
   align-items: center;
-  padding-top: 6vh; /* small padding from top */
+  padding: 0 20px;
   overflow: hidden;
 }
 
-/* Overlay on top of hero (backgroundland.png) */
+/* Overlay on top of hero (backgroundland.png) - centered, not rotated */
 .hero::before {
   content: '';
   position: absolute;
-  top: 50%; /* center of hero */
+  top: calc(50% + 2cm); /* overlay moved down */
   left: 50%;
   transform: translate(-50%, -50%);
   width: 900px;
@@ -27,11 +41,11 @@
   animation: floatOverlay 6s ease-in-out infinite alternate;
 }
 
-/* logo-img.png — fine-tuned position */
+/* logo-img.png — moved 2.5cm right and 2cm down */
 .hero .logo-img {
   position: absolute;
-  top: calc(20% + 1.5cm);  /* slightly higher than before for balance */
-  left: calc(20% + 2.5cm);
+  top: calc(20% + 2cm); /* 2cm down */
+  left: calc(20% + 2.5cm); /* 2.5cm right */
   transform: rotate(-20deg);
   width: 120px;
   height: auto;
@@ -39,21 +53,28 @@
   animation: floatOverlay 6s ease-in-out infinite alternate;
 }
 
-/* logo-text.png — fine-tuned position */
-.logo-text {
-  width: 220px;
-  display: block;
-  margin: -4cm auto 20px auto; /* slightly higher than previous -5cm */
+/* Hero Logos */
+.hero h1,
+.hero .logo-text,
+.hero .title-logo {
+  position: relative;
   z-index: 2;
 }
 
-/* Tagline — fine-tuned to always sit 1cm below overlay */
+/* logo-text.png — moved 3cm down */
+.logo-text {
+  width: 220px;
+  display: block;
+  margin: -5cm auto 20px auto; /* adjusted from -8cm to -5cm */
+}
+
+/* Tagline - always 1cm below backgroundland.png */
 .hero .tagline-container {
   position: absolute;
-  top: calc(50% + 300px + 1cm); /* overlay center + half overlay height + 1cm */
+  top: calc(50% + 2cm + 300px + 1cm); /* center + overlay shift + half overlay height + 1cm below */
   left: 50%;
   transform: translateX(-50%);
-  z-index: 3;
+  z-index: 3; /* above logo-img */
   text-align: center;
 }
 
@@ -69,10 +90,21 @@
   animation: floatText 4s ease-in-out infinite alternate;
 }
 
-/* Hero CTA Button — keep same */
+/* Floating Animations */
+@keyframes floatText {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-8px); }
+}
+
+@keyframes floatOverlay {
+  0% { transform: translate(-50%, -50%) translateY(0); }
+  100% { transform: translate(-50%, -50%) translateY(-15px); }
+}
+
+/* Hero CTA Button */
 .hero .cta-button {
   display: inline-block;
-  margin-top: calc(50% + 330px + 1.5cm); /* place below tagline nicely */
+  margin-top: 20px;
   padding: 12px 25px;
   font-size: 1.2rem;
   background-color: #f4a261;
@@ -90,16 +122,25 @@
   box-shadow: 0 0 20px rgba(231,111,81,0.8);
 }
 
-/* ---------------- RESPONSIVE HERO ---------------- */
+/* ---------------- RESPONSIVE FIXES ---------------- */
+@media (max-width: 1200px) {
+  .hero .logo-img { width: 100px; }
+}
+
+@media (max-width: 992px) {
+  .hero .logo-img { width: 90px; }
+}
+
 @media (max-width: 768px) {
   .hero {
     min-height: 80vh;
-    padding-top: 5vh;
+    padding-top: 40px;
   }
 
   .hero::before {
     width: 600px;
     height: 400px;
+    top: calc(50% + 1cm); /* adjust overlay for mobile */
   }
 
   .hero .logo-img {
@@ -111,7 +152,7 @@
   }
 
   .logo-text {
-    margin: -3cm auto 10px auto;
+    margin: -5cm auto 10px auto;
     width: 180px;
   }
 
@@ -124,13 +165,95 @@
   .hero .tagline-container p {
     font-size: 1.2rem;
   }
+}
 
-  .hero .cta-button {
-    margin-top: 15px;
-  }
+/* ---------------- RECIPE SECTION ---------------- */
+.background02-section {
+  width: 100%;
+  padding: 80px 20px;
+  text-align: center;
+  position: relative;
+  color: white;
+  overflow: hidden;
+}
+
+.background02-section::before,
+.background02-section::after {
+  display: none;
+}
+
+.recipe-links {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.recipe-links h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #f4a261;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
+}
+
+.recipe-card {
+  width: 260px;
+  text-align: center;
+  padding: 20px;
+  background: linear-gradient(145deg, rgba(244,162,97,0.95), rgba(231,111,81,0.95));
+  color: white;
+  text-decoration: none;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.recipe-card i {
+  font-size: 2.5rem;
+  background: linear-gradient(45deg, #FFE8A1, #F4A261);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.recipe-card:hover {
+  transform: scale(1.06) translateY(-6px);
+  box-shadow: 0 12px 24px rgba(231,111,81,0.6);
+}
+
+/* ---------------- FOOTER ---------------- */
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #264653;
+}
+
+footer p {
+  color: #f4a261;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  margin: 0;
+}
+
+footer a {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+  transition: color 0.3s;
+}
+
+footer a:hover {
+  color: #f4a261;
 }
 
 
+  
 
 
 
