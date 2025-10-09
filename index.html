@@ -11,14 +11,8 @@
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="style.css" id="main-style">
-
-  <!-- Dynamic CSS versioning to force latest file -->
-  <script>
-    const link = document.getElementById('main-style');
-    link.href = link.href.split('?')[0] + '?v=' + new Date().getTime();
-  </script>
+  <!-- CSS with versioning to prevent caching -->
+  <link rel="stylesheet" href="style.css?v=1.0">
 </head>
 <body>
 
@@ -30,7 +24,7 @@
     <!-- Logo Image -->
     <img src="images/logo-img.png" alt="Recipe Icon" class="logo-img">
 
-    <!-- Tagline -->
+    <!-- Tagline 1cm below backgroundland.png -->
     <div class="tagline-container">
       <p>Delicious recipes made simple!</p>
     </div>
@@ -45,13 +39,16 @@
       <h2>Explore Recipes</h2>
       <div class="links">
         <a href="grilledcheesesandwich.html" class="recipe-card">
-          <i class="fas fa-cheese"></i> Grilled Cheese Sandwich
+          <i class="fas fa-cheese"></i>
+          <span>Grilled Cheese Sandwich</span>
         </a>
         <a href="strawberrymilkshake.html" class="recipe-card">
-          <i class="fas fa-cocktail"></i> Strawberry Milkshake
+          <i class="fas fa-cocktail"></i>
+          <span>Strawberry Milkshake</span>
         </a>
         <a href="cookies.html" class="recipe-card">
-          <i class="fas fa-cookie-bite"></i> Cookies
+          <i class="fas fa-cookie-bite"></i>
+          <span>Cookies</span>
         </a>
       </div>
     </section>
@@ -69,11 +66,14 @@
     footer.innerHTML = `&copy; ${today.getFullYear()} My Recipe Book | DESPOE2024<br>Today's date: ${today.toDateString()}`;
   </script>
 
+  <!-- Optional: auto-version CSS to prevent caching -->
+  <script>
+    const link = document.querySelector('link[rel="stylesheet"]');
+    link.href = link.href.split('?')[0] + '?v=' + new Date().getTime();
+  </script>
+
 </body>
 </html>
 
-
-
-
-
-
+  
+  
