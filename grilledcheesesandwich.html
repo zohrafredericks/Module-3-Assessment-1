@@ -1,94 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ultimate Cheesy Grilled Sandwich | My Recipe Book</title>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    body {
-      background-image: url('images/background01.png');
-      background-size: cover;
-      background-position: center;
-      min-height: 100vh;
-      margin: 0;
-      font-family: 'Roboto', sans-serif;
-    }
-    main { max-width: 900px; margin: auto; padding: 20px; }
-    .recipe-image { text-align: center; margin-bottom: 30px; }
-    .recipe-image img {
-      width: 90%;
-      max-width: 400px;
-      border-radius: 16px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .recipe-image img:hover { transform: scale(1.03); box-shadow: 0 15px 35px rgba(0,0,0,0.4); }
-    .recipe-content h2 { font-family: 'Baloo 2', cursive; font-size: 2.5rem; color: #e07a2f; text-align: center; margin-bottom: 10px; text-shadow: 1px 1px 6px rgba(0,0,0,0.4);}
-    .recipe-content em { display: block; text-align: center; font-size: 1.2rem; margin-bottom: 20px; color: #264653;}
-    .recipe-info { text-align: center; font-weight: 700; margin-bottom: 25px; }
-    .recipe-box { background: rgba(38,70,83,0.1); border-radius: 14px; padding: 20px; margin-bottom: 25px; box-shadow: 0 6px 18px rgba(0,0,0,0.15); line-height: 1.7; color:#e07a2f;}
-    .recipe-box li { margin-bottom: 10px; }
-    h3 { font-family: 'Baloo 2', cursive; color: #e07a2f; text-transform: uppercase; letter-spacing: 1px; text-shadow: 1px 1px 4px rgba(0,0,0,0.4); margin-bottom: 10px; }
-    .back-home { text-align: center; margin: 30px 0; }
-    .back-home a { text-decoration: none; font-family: 'Baloo 2', cursive; color: #e76f51; font-size: 1.2rem; background: rgba(255,255,255,0.2); padding: 12px 28px; border-radius: 30px; display: inline-block; transition: all 0.3s ease; }
-    .back-home a:hover { background: rgba(255,255,255,0.35); transform: scale(1.05); }
-    nav a { margin:0 15px; text-decoration:none; color:#264653; font-weight:700; transition: color 0.3s; }
-    nav a:hover { color:#e07a2f; }
-    footer { background-color: #264653; color: #f4a261; padding: 20px; text-align: center; font-size: 0.9rem;}
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grilled Cheese Sandwich | My Recipe Book</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700&display=swap" rel="stylesheet">
+<style>
+body { 
+  background-image: url('images/background01.png'); 
+  background-size: cover; 
+  background-position: center; 
+  min-height: 100vh; 
+  margin: 0; 
+  font-family: 'Roboto', sans-serif; 
+}
+main { max-width: 900px; margin: auto; padding: 20px; }
+.recipe-image { text-align: center; margin-bottom: 30px; }
+.recipe-image img { width: 90%; max-width: 400px; border-radius: 16px; box-shadow: 0 10px 25px rgba(0,0,0,0.3); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+.recipe-image img:hover { transform: scale(1.03); box-shadow: 0 15px 35px rgba(0,0,0,0.4); }
+.recipe-content h2 { font-family: 'Baloo 2', cursive; font-size: 2.5rem; color: #e07a2f; text-align: center; margin-bottom: 10px; text-shadow: 1px 1px 6px rgba(0,0,0,0.4);}
+.recipe-content em { display: block; text-align: center; font-size: 1.2rem; margin-bottom: 20px; color: #264653;}
+.recipe-info { text-align: center; font-weight: 700; margin-bottom: 25px; }
+.recipe-box { 
+  background: rgba(38,70,83,0.1); 
+  border-radius: 14px; 
+  padding: 20px; 
+  margin-bottom: 25px; 
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15); 
+  line-height: 1.7; 
+  color: #000; /* changed to black */
+}
+.recipe-box li { margin-bottom: 10px; }
+h3 { font-family: 'Baloo 2', cursive; color: #e07a2f; text-transform: uppercase; letter-spacing: 1px; text-shadow: 1px 1px 4px rgba(0,0,0,0.4); margin-bottom: 10px; }
+.back-home { text-align: center; margin: 30px 0; }
+.back-home a { text-decoration: none; font-family: 'Baloo 2', cursive; color: #e76f51; font-size: 1.2rem; background: rgba(255,255,255,0.2); padding: 12px 28px; border-radius: 30px; display: inline-block; transition: all 0.3s ease; }
+.back-home a:hover { background: rgba(255,255,255,0.35); transform: scale(1.05); }
+nav a { margin:0 15px; text-decoration:none; color:#264653; font-weight:700; transition: color 0.3s; }
+nav a:hover { color:#e07a2f; }
+footer { background-color: #264653; color: #f4a261; padding: 20px; text-align: center; font-size: 0.9rem;}
+</style>
 </head>
 <body>
-  <main>
-    <!-- NAVIGATION LINKS -->
-    <nav style="text-align:center; margin-bottom:30px;">
-      <a href="index.html">Home</a> |
-      <a href="strawberryMilkshake.html">Strawberry Milkshake</a> |
-      <a href="cookies.html">Cookies</a>
-    </nav>
+<main>
+<nav style="text-align:center; margin-bottom:30px;">
+  <a href="index.html">Home</a> |
+  <a href="grilledcheesesandwich.html">Grilled Cheese</a> |
+  <a href="strawberrymilkshake.html">Strawberry Milkshake</a> |
+  <a href="cookies.html">Cookies</a>
+</nav>
 
-    <section class="recipe-content">
-      <div class="recipe-image">
-        <img src="images/grilledCheese.png" alt="Grilled Cheese Sandwich">
-      </div>
-      <h2>Grilled Cheese Sandwich</h2>
-      <em>Extra cheesy grilled delight</em>
-      <div class="recipe-info">
-        <p><strong>Prep time:</strong> 10 mins</p>
-        <p><strong>Yield:</strong> 4 servings</p>
-      </div>
-      <h3>Ingredients</h3>
-      <ul class="recipe-box">
-        <li>1/4 cup butter, softened</li>
-        <li>1 tablespoon grated Parmesan cheese</li>
-        <li>8 Italian bread slices</li>
-        <li>4 provolone cheese slices (3/4-oz.)</li>
-        <li>4 mozzarella cheese slices (3/4-oz.)</li>
-      </ul>
-      <h3>Steps</h3>
-      <ol class="recipe-box">
-        <li>Stir together butter and Parmesan cheese in a small bowl.</li>
-        <li>Spread 1 1/2 tsp. butter mixture on 1 side of each bread slice. Place 4 bread slices, buttered sides down, on wax paper. Top with provolone and mozzarella cheeses; top with remaining bread slices, buttered sides up.</li>
-        <li>Cook sandwiches on a hot griddle or non-stick skillet over medium heat, gently pressing with a spatula, 4 minutes on each side or until golden brown and cheese is melted.</li>
-      </ol>
-    </section>
+<section class="recipe-content">
+  <div class="recipe-image">
+    <img src="images/grilledcheese.png" alt="Grilled Cheese Sandwich">
+  </div>
+  <h2>Grilled Cheese Sandwich</h2>
+  <em>Classic golden and cheesy sandwich</em>
+  <div class="recipe-info">
+    <p><strong>Prep time:</strong> 10 mins</p>
+    <p><strong>Yield:</strong> 2 sandwiches</p>
+  </div>
+  <h3>Ingredients</h3>
+  <ul class="recipe-box">
+    <li>4 slices of bread</li>
+    <li>2 tablespoons butter</li>
+    <li>4 slices cheddar cheese</li>
+  </ul>
+  <h3>Steps</h3>
+  <ol class="recipe-box">
+    <li>Heat a skillet over medium heat.</li>
+    <li>Butter one side of each slice of bread.</li>
+    <li>Place one slice, butter-side down, on the skillet. Add cheese slices, then top with the other bread slice, butter-side up.</li>
+    <li>Cook until golden brown, then flip and cook the other side until cheese is melted.</li>
+  </ol>
+</section>
 
-    <div class="back-home">
-      <a href="index.html">← Back to Home</a>
-    </div>
-  </main>
+<div class="back-home">
+  <a href="index.html">← Back to Home</a>
+</div>
+</main>
 
-  <footer>
-    <p id="footer-text">&copy; 2025 Recipe Book App | DESPOE2024</p>
-  </footer>
-  <script>
-    const footer = document.getElementById("footer-text");
-    const today = new Date();
-    footer.innerHTML = `&copy; ${today.getFullYear()} Recipe Book App | DESPOE2024<br>Today's date: ${today.toDateString()}`;
-  </script>
+<footer>
+<p id="footer-text">&copy; 2025 Recipe Book App | DESPOE2024</p>
+</footer>
+<script>
+const footer = document.getElementById("footer-text");
+const today = new Date();
+footer.innerHTML = `&copy; ${today.getFullYear()} Recipe Book App | DESPOE2024<br>Today's date: ${today.toDateString()}`;
+</script>
 </body>
 </html>
 
-  
- 
