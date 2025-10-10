@@ -3,60 +3,120 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Strawberry Milkshake | My Recipe Book</title>
+  <title>Delicious Strawberry Milkshake | My Recipe Book</title>
   <link rel="stylesheet" href="style.css">
+  <!-- Google Font for playful headings -->
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
+  <!-- HERO SECTION -->
   <header class="hero">
-    <img src="images/logo-text.png" alt="Recipe Book Logo" class="logo-text">
-    <div class="title-logo">
-      <img src="images/logo-img.png" alt="Recipe Icon" class="logo-img">
-      <h1>My Recipe Book</h1>
-    </div>
-    <p>Delicious recipes made simple!</p>
+    <p class="tagline-container">Delicious recipes made simple!</p>
   </header>
 
+  <!-- MAIN CONTENT -->
   <main>
     <section class="recipe-content">
       <h2>Strawberry Milkshake</h2>
-      <p><em>Creamy strawberry milkshake</em></p>
+      <p><em>Creamy and sweet strawberry milkshake</em></p>
 
-      <div class="recipe-info">
+      <!-- Recipe Image -->
+      <div class="recipe-image">
+        <img src="images/strawberryMilkshake.png" alt="Strawberry Milkshake" style="width:100%; max-width:400px; border-radius:12px; box-shadow: 0 5px 15px rgba(0,0,0,0.3);">
+      </div>
+
+      <!-- Recipe Info -->
+      <div class="recipe-info" style="margin:20px 0; font-weight:700;">
         <p><strong>Prep time:</strong> 10 mins</p>
         <p><strong>Yield:</strong> 4 servings</p>
       </div>
 
+      <!-- Ingredients -->
       <h3>Ingredients</h3>
-      <ul>
+      <ul class="recipe-box">
         <li>8 ounces strawberries, stemmed and sliced</li>
         <li>1/2 teaspoon vanilla extract</li>
         <li>1 pint vanilla ice cream</li>
         <li>1/4 cup milk</li>
       </ul>
 
+      <!-- Steps -->
       <h3>Steps</h3>
-      <ol>
+      <ol class="recipe-box">
         <li>Blend half of strawberries, 1/4 tsp. vanilla, 1 cup ice cream and 2 Tbsp. milk in blender until smooth.</li>
         <li>Pour into 2 glasses. Repeat with remaining strawberries, vanilla, ice cream and milk.</li>
         <li>Serve immediately.</li>
       </ol>
     </section>
 
+    <!-- Back to Home Button -->
     <div class="back-home">
       <a href="index.html">← Back to Home</a>
     </div>
   </main>
 
+  <!-- FOOTER -->
   <footer>
     <p id="footer-text">&copy; 2024 Recipe Book App | DESPOE2024</p>
   </footer>
 
+  <!-- Footer Script for Current Date -->
   <script>
     const footer = document.getElementById("footer-text");
     const today = new Date();
     footer.innerHTML = `&copy; ${today.getFullYear()} Recipe Book App | DESPOE2024<br>Today's date: ${today.toDateString()}`;
   </script>
+
+  <!-- PAGE-SPECIFIC STYLING -->
+  <style>
+    /* Back to Home Button */
+    .back-home {
+      text-align: center;
+      margin: 30px 0;
+    }
+
+    .back-home a {
+      text-decoration: none;
+      font-family: 'Baloo 2', cursive;
+      color: #e76f51;
+      font-size: 1.2rem;
+      background: rgba(255,255,255,0.2);
+      padding: 10px 25px;
+      border-radius: 25px;
+      transition: all 0.3s ease;
+      display: inline-block;
+    }
+
+    .back-home a:hover {
+      background: rgba(255,255,255,0.35);
+      transform: scale(1.05);
+    }
+
+    /* Ingredients & Steps Boxes */
+    .recipe-box {
+      background: rgba(38,70,83,0.1);
+      border-radius: 12px;
+      padding: 15px 20px;
+      margin: 15px 0 25px 0;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      font-family: 'Roboto', sans-serif;
+      line-height: 1.6;
+    }
+
+    .recipe-box li {
+      margin-bottom: 8px;
+    }
+
+    h3 {
+      font-family: 'Baloo 2', cursive;
+      color: #f4a261;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.4);
+    }
+  </style>
 </body>
 </html>
 
-  
+     
+
