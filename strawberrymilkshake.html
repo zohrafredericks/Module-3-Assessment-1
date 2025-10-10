@@ -3,9 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Delicious Strawberry Milkshake | My Recipe Book</title>
+  <title>Strawberry Milkshake | My Recipe Book</title>
   <link rel="stylesheet" href="style.css">
-  <!-- Google Font for playful headings -->
   <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -18,7 +17,7 @@
   <main>
     <section class="recipe-content">
       <h2>Strawberry Milkshake</h2>
-      <p><em>Creamy and sweet strawberry milkshake</em></p>
+      <p><em>Creamy strawberry delight</em></p>
 
       <!-- Recipe Image -->
       <div class="recipe-image">
@@ -57,24 +56,20 @@
 
   <!-- FOOTER -->
   <footer>
-    <p id="footer-text">&copy; 2024 Recipe Book App | DESPOE2024</p>
+    <p id="footer-text">&copy; 2025 Recipe Book | DESPOE2024</p>
   </footer>
 
-  <!-- Footer Script for Current Date -->
   <script>
     const footer = document.getElementById("footer-text");
     const today = new Date();
-    footer.innerHTML = `&copy; ${today.getFullYear()} Recipe Book App | DESPOE2024<br>Today's date: ${today.toDateString()}`;
+    footer.innerHTML = `&copy; ${today.getFullYear()} Recipe Book | DESPOE2024<br>Today's date: ${today.toDateString()}`;
   </script>
 
-  <!-- PAGE-SPECIFIC STYLING -->
   <style>
-    /* Back to Home Button */
     .back-home {
       text-align: center;
       margin: 30px 0;
     }
-
     .back-home a {
       text-decoration: none;
       font-family: 'Baloo 2', cursive;
@@ -86,13 +81,10 @@
       transition: all 0.3s ease;
       display: inline-block;
     }
-
     .back-home a:hover {
       background: rgba(255,255,255,0.35);
       transform: scale(1.05);
     }
-
-    /* Ingredients & Steps Boxes */
     .recipe-box {
       background: rgba(38,70,83,0.1);
       border-radius: 12px;
@@ -102,11 +94,7 @@
       font-family: 'Roboto', sans-serif;
       line-height: 1.6;
     }
-
-    .recipe-box li {
-      margin-bottom: 8px;
-    }
-
+    .recipe-box li { margin-bottom: 8px; }
     h3 {
       font-family: 'Baloo 2', cursive;
       color: #f4a261;
@@ -118,5 +106,4 @@
 </body>
 </html>
 
-     
 
