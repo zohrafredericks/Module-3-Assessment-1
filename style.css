@@ -157,16 +157,24 @@ body {
   color: #e76f51;
 }
 
-/* Recipe Title Highlight */
+/* Recipe Title Highlight (updated) */
 .recipe-card span {
-  padding: 4px 10px;
-  background: rgba(255,255,255,0.15);
-  border-radius: 6px;
+  font-family: 'Baloo 2', cursive; /* playful font matching headings */
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #e76f51; /* pop of red */
+  text-decoration: none; /* removes underline */
+  padding: 6px 14px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 8px;
+  letter-spacing: 0.5px;
   display: inline-block;
-  transition: background 0.3s;
+  transition: all 0.3s ease;
 }
+
 .recipe-card span:hover {
-  background: rgba(255,255,255,0.3);
+  background: rgba(255,255,255,0.25);
+  transform: scale(1.05);
 }
 
 /* ---------------- FOOTER ---------------- */
@@ -200,3 +208,4 @@ footer {
   .recipe-card span { padding: 3px 8px; }
 }
 
+ 
