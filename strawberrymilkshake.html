@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Strawberry Milkshake | My Recipe Book</title>
+  <title>Delicious Strawberry Milkshake | My Recipe Book</title>
   <link rel="stylesheet" href="style.css">
+  <!-- Google Font for playful headings -->
   <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -17,11 +18,11 @@
   <main>
     <section class="recipe-content">
       <h2>Strawberry Milkshake</h2>
-      <p><em>Creamy strawberry delight</em></p>
+      <p><em>Creamy and sweet strawberry milkshake</em></p>
 
       <!-- Recipe Image -->
       <div class="recipe-image">
-        <img src="images/strawberryMilkshake.png" alt="Strawberry Milkshake" style="width:100%; max-width:400px; border-radius:12px; box-shadow: 0 5px 15px rgba(0,0,0,0.3);">
+        <img src="images/strawberryMilkshake.png" alt="Strawberry Milkshake">
       </div>
 
       <!-- Recipe Info -->
@@ -56,20 +57,42 @@
 
   <!-- FOOTER -->
   <footer>
-    <p id="footer-text">&copy; 2025 Recipe Book | DESPOE2024</p>
+    <p id="footer-text">&copy; 2024 Recipe Book App | DESPOE2024</p>
   </footer>
 
+  <!-- Footer Script for Current Date -->
   <script>
     const footer = document.getElementById("footer-text");
     const today = new Date();
-    footer.innerHTML = `&copy; ${today.getFullYear()} Recipe Book | DESPOE2024<br>Today's date: ${today.toDateString()}`;
+    footer.innerHTML = `&copy; ${today.getFullYear()} Recipe Book App | DESPOE2024<br>Today's date: ${today.toDateString()}`;
   </script>
 
+  <!-- PAGE-SPECIFIC STYLING -->
   <style>
+    /* Remove backgroundland overlay for this page only */
+    .hero::before {
+        display: none !important;
+    }
+
+    /* Center recipe image at the top nicely */
+    .recipe-image {
+        text-align: center;
+        margin: 20px 0 30px 0;
+    }
+
+    .recipe-image img {
+        max-width: 400px;
+        width: 100%;
+        border-radius: 12px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    }
+
+    /* Back to Home Button */
     .back-home {
       text-align: center;
       margin: 30px 0;
     }
+
     .back-home a {
       text-decoration: none;
       font-family: 'Baloo 2', cursive;
@@ -81,10 +104,13 @@
       transition: all 0.3s ease;
       display: inline-block;
     }
+
     .back-home a:hover {
       background: rgba(255,255,255,0.35);
       transform: scale(1.05);
     }
+
+    /* Ingredients & Steps Boxes */
     .recipe-box {
       background: rgba(38,70,83,0.1);
       border-radius: 12px;
@@ -94,7 +120,11 @@
       font-family: 'Roboto', sans-serif;
       line-height: 1.6;
     }
-    .recipe-box li { margin-bottom: 8px; }
+
+    .recipe-box li {
+      margin-bottom: 8px;
+    }
+
     h3 {
       font-family: 'Baloo 2', cursive;
       color: #f4a261;
@@ -106,4 +136,5 @@
 </body>
 </html>
 
+ 
 
