@@ -11,31 +11,22 @@
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
 
-  <!-- CSS with versioning to prevent caching -->
+  <!-- CSS -->
   <link rel="stylesheet" href="style.css?v=1.0">
 </head>
 <body>
 
   <!-- HERO HEADER -->
   <header class="hero">
-    <!-- Logo Text -->
-    <img src="images/logo-text.png" alt="Recipe Book Logo" class="logo-text">
-
-    <!-- Logo Image -->
-    <img src="images/logo-img.png" alt="Recipe Icon" class="logo-img">
-
-    <!-- Tagline 1cm below backgroundland.png -->
     <div class="tagline-container">
       <p>Delicious recipes made simple!</p>
     </div>
-
-    <!-- Call-to-action button -->
     <a href="#recipes" class="cta-button">Start Cooking</a>
   </header>
 
   <!-- RECIPE LINKS -->
   <main>
-    <section class="recipe-links background02-section" id="recipes">
+    <section class="recipe-links" id="recipes">
       <h2>Explore Recipes</h2>
       <div class="links">
         <a href="grilledcheesesandwich.html" class="recipe-card">
@@ -66,7 +57,7 @@
     footer.innerHTML = `&copy; ${today.getFullYear()} My Recipe Book | DESPOE2024<br>Today's date: ${today.toDateString()}`;
   </script>
 
-  <!-- Optional: auto-version CSS to prevent caching -->
+  <!-- Optional: prevent CSS caching -->
   <script>
     const link = document.querySelector('link[rel="stylesheet"]');
     link.href = link.href.split('?')[0] + '?v=' + new Date().getTime();
@@ -74,6 +65,3 @@
 
 </body>
 </html>
-
-  
-  
