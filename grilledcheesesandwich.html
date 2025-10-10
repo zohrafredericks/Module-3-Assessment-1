@@ -8,6 +8,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
+
   <!-- HERO SECTION -->
   <header class="hero">
     <p class="tagline-container">Delicious recipes made simple!</p>
@@ -21,7 +22,7 @@
 
       <!-- Recipe Image -->
       <div class="recipe-image">
-        <img src="images/grilledCheese.png" alt="Grilled Cheese Sandwich" style="width:100%; max-width:400px; border-radius:12px; box-shadow: 0 5px 15px rgba(0,0,0,0.3);">
+        <img src="images/grilledCheese.png" alt="Grilled Cheese Sandwich">
       </div>
 
       <!-- Recipe Info -->
@@ -60,11 +61,70 @@
     <p id="footer-text">&copy; 2025 Recipe Book App | DESPOE2024</p>
   </footer>
 
-  <!-- Dynamic Footer JS -->
   <script>
     const footer = document.getElementById("footer-text");
     const today = new Date();
     footer.innerHTML = `&copy; ${today.getFullYear()} Recipe Book App | DESPOE2024<br>Today's date: ${today.toDateString()}`;
   </script>
+
+  <!-- PAGE-SPECIFIC IMAGE STYLING -->
+  <style>
+    /* Recipe Image */
+    .recipe-image {
+      text-align: center;
+      margin: 25px 0;
+    }
+    .recipe-image img {
+      width: 90%;
+      max-width: 500px;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      display: inline-block;
+      transition: transform 0.3s ease;
+    }
+    .recipe-image img:hover { transform: scale(1.03); }
+
+    /* Back to Home */
+    .back-home { text-align: center; margin: 30px 0; }
+    .back-home a {
+      text-decoration: none;
+      font-family: 'Baloo 2', cursive;
+      color: #e76f51;
+      font-size: 1.2rem;
+      background: rgba(255,255,255,0.2);
+      padding: 10px 25px;
+      border-radius: 25px;
+      display: inline-block;
+      transition: all 0.3s ease;
+    }
+    .back-home a:hover { background: rgba(255,255,255,0.35); transform: scale(1.05); }
+
+    /* Ingredients & Steps Boxes */
+    .recipe-box {
+      background: rgba(38,70,83,0.1);
+      border-radius: 12px;
+      padding: 15px 20px;
+      margin: 15px 0 25px 0;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      line-height: 1.6;
+    }
+    .recipe-box li { margin-bottom: 8px; }
+    h3 {
+      font-family: 'Baloo 2', cursive;
+      color: #f4a261;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.4);
+    }
+
+    @media (max-width: 1200px) { .recipe-image img { max-width: 450px; } }
+    @media (max-width: 992px)  { .recipe-image img { max-width: 400px; } }
+    @media (max-width: 768px)  { .recipe-image img { max-width: 350px; } }
+    @media (max-width: 480px)  { .recipe-image img { max-width: 300px; } }
+  </style>
+
 </body>
 </html>
+
+    
