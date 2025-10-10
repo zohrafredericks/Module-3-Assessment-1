@@ -109,7 +109,7 @@ body {
   align-items: center;
 }
 
-/* UPDATED RECIPE HEADINGS – no red border, link fix */
+/* UPDATED RECIPE HEADINGS – no red border, links fix */
 .recipe-links h2 {
   font-family: 'Baloo 2', cursive;
   font-size: 2.8rem;
@@ -126,7 +126,7 @@ body {
   text-align: center;
 }
 
-/* Target links inside headings */
+/* Target links inside headings to remove underline */
 .recipe-links h2 a {
   text-decoration: none; /* removes underline */
   color: inherit;        /* inherits heading color */
@@ -226,7 +226,6 @@ footer {
   .recipe-card i { font-size: 2rem; }
   .recipe-card span { padding: 3px 8px; }
 }
-
 
 
 
