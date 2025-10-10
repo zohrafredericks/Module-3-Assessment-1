@@ -6,37 +6,51 @@
   <title>Delicious Strawberry Milkshake | My Recipe Book</title>
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background-image: url('images/background01.png');
+      background-size: cover;
+      background-position: center;
+      min-height: 100vh;
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+    }
+    main { max-width: 900px; margin: auto; padding: 20px; }
+    .recipe-image { text-align: center; margin-bottom: 30px; }
+    .recipe-image img { width: 90%; max-width: 400px; border-radius: 16px; box-shadow: 0 10px 25px rgba(0,0,0,0.3); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+    .recipe-image img:hover { transform: scale(1.03); box-shadow: 0 15px 35px rgba(0,0,0,0.4); }
+    .recipe-content h2 { font-family: 'Baloo 2', cursive; font-size: 2.5rem; color: #e07a2f; text-align: center; margin-bottom: 10px; text-shadow: 1px 1px 6px rgba(0,0,0,0.4);}
+    .recipe-content em { display: block; text-align: center; font-size: 1.2rem; margin-bottom: 20px; color: #264653;}
+    .recipe-info { text-align: center; font-weight: 700; margin-bottom: 25px; }
+    .recipe-box { background: rgba(38,70,83,0.1); border-radius: 14px; padding: 20px; margin-bottom: 25px; box-shadow: 0 6px 18px rgba(0,0,0,0.15); line-height: 1.7; color:#e07a2f;}
+    .recipe-box li { margin-bottom: 10px; }
+    h3 { font-family: 'Baloo 2', cursive; color: #e07a2f; text-transform: uppercase; letter-spacing: 1px; text-shadow: 1px 1px 4px rgba(0,0,0,0.4); margin-bottom: 10px; }
+    .back-home { text-align: center; margin: 30px 0; }
+    .back-home a { text-decoration: none; font-family: 'Baloo 2', cursive; color: #e76f51; font-size: 1.2rem; background: rgba(255,255,255,0.2); padding: 12px 28px; border-radius: 30px; display: inline-block; transition: all 0.3s ease; }
+    .back-home a:hover { background: rgba(255,255,255,0.35); transform: scale(1.05); }
+    footer { background-color: #264653; color: #f4a261; padding: 20px; text-align: center; font-size: 0.9rem;}
+    nav a { margin:0 15px; text-decoration:none; color:#264653; font-weight:700; }
+  </style>
 </head>
 <body>
-  <!-- HERO SECTION -->
-  <header class="hero">
-    <p class="tagline-container">Delicious recipes made simple!</p>
-  </header>
-
-  <!-- MAIN CONTENT -->
   <main>
-    <!-- Links to other recipes -->
-    <div class="other-recipes-links" style="text-align:center; margin-bottom:20px;">
-      <a href="grilledcheesesandwich.html" style="margin-right:15px;">Grilled Cheese Sandwich</a>
+    <!-- NAVIGATION LINKS -->
+    <nav style="text-align:center; margin-bottom:30px;">
+      <a href="index.html">Home</a> |
+      <a href="grilledCheese.html">Grilled Cheese</a> |
       <a href="cookies.html">Cookies</a>
-    </div>
+    </nav>
 
     <section class="recipe-content">
-      <h2>Strawberry Milkshake</h2>
-      <p><em>Creamy and sweet strawberry milkshake</em></p>
-
-      <!-- Recipe Image -->
-      <div class="recipe-image" style="text-align:center; margin-bottom:20px;">
-        <img src="images/strawberryMilkshake.png" alt="Strawberry Milkshake" style="width:100%; max-width:400px; border-radius:12px; box-shadow:0 5px 15px rgba(0,0,0,0.3);">
+      <div class="recipe-image">
+        <img src="images/strawberryMilkshake.png" alt="Strawberry Milkshake">
       </div>
-
-      <!-- Recipe Info -->
-      <div class="recipe-info" style="margin:20px 0; font-weight:700;">
+      <h2>Strawberry Milkshake</h2>
+      <em>Creamy and sweet strawberry milkshake</em>
+      <div class="recipe-info">
         <p><strong>Prep time:</strong> 10 mins</p>
         <p><strong>Yield:</strong> 4 servings</p>
       </div>
-
-      <!-- Ingredients -->
       <h3>Ingredients</h3>
       <ul class="recipe-box">
         <li>8 ounces strawberries, stemmed and sliced</li>
@@ -44,8 +58,6 @@
         <li>1 pint vanilla ice cream</li>
         <li>1/4 cup milk</li>
       </ul>
-
-      <!-- Steps -->
       <h3>Steps</h3>
       <ol class="recipe-box">
         <li>Blend half of strawberries, 1/4 tsp. vanilla, 1 cup ice cream and 2 Tbsp. milk in blender until smooth.</li>
@@ -53,79 +65,20 @@
         <li>Serve immediately.</li>
       </ol>
     </section>
-
-    <!-- Back to Home Button -->
     <div class="back-home">
       <a href="index.html">← Back to Home</a>
     </div>
   </main>
-
   <footer>
-    <p id="footer-text">&copy; 2024 Recipe Book App | DESPOE2024</p>
+    <p id="footer-text">&copy; 2025 Recipe Book App | DESPOE2024</p>
   </footer>
-
   <script>
     const footer = document.getElementById("footer-text");
     const today = new Date();
     footer.innerHTML = `&copy; ${today.getFullYear()} Recipe Book App | DESPOE2024<br>Today's date: ${today.toDateString()}`;
   </script>
-
-  <style>
-    .back-home {
-      text-align: center;
-      margin: 30px 0;
-    }
-    .back-home a {
-      text-decoration: none;
-      font-family: 'Baloo 2', cursive;
-      color: #e76f51;
-      font-size: 1.2rem;
-      background: rgba(255,255,255,0.2);
-      padding: 10px 25px;
-      border-radius: 25px;
-      transition: all 0.3s ease;
-      display: inline-block;
-    }
-    .back-home a:hover {
-      background: rgba(255,255,255,0.35);
-      transform: scale(1.05);
-    }
-
-    .recipe-box {
-      background: rgba(38,70,83,0.1);
-      border-radius: 12px;
-      padding: 15px 20px;
-      margin: 15px 0 25px 0;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-      font-family: 'Roboto', sans-serif;
-      line-height: 1.6;
-    }
-
-    .recipe-box li {
-      margin-bottom: 8px;
-    }
-
-    h3 {
-      font-family: 'Baloo 2', cursive;
-      color: #d96c2a;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      text-shadow: 1px 1px 4px rgba(0,0,0,0.4);
-    }
-
-    .other-recipes-links a {
-      font-family: 'Baloo 2', cursive;
-      font-size: 1.1rem;
-      color: #264653;
-      text-decoration: none;
-      margin: 0 5px;
-    }
-    .other-recipes-links a:hover {
-      color: #e76f51;
-      text-decoration: underline;
-    }
-  </style>
 </body>
 </html>
 
   
+
