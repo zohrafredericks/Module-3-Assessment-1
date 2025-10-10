@@ -3,6 +3,8 @@ body {
   margin: 0;
   font-family: 'Roboto', sans-serif;
   color: #333;
+
+  /* Full-page background */
   background-image: url('images/background01.png');
   background-size: cover;
   background-position: center;
@@ -23,61 +25,15 @@ body {
   overflow: visible;
 }
 
-/* Hero Overlay */
-.hero::before {
-  content: "";
-  position: absolute;
-  top: calc(50% - 1cm); /* moved up 3cm */
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 900px;
-  height: 600px;
-  background-image: url('images/backgroundland.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  z-index: 1;
-  animation: floatOverlay 3s ease-in-out infinite alternate;
-}
-
-/* Floating animation for overlay */
-@keyframes floatOverlay {
-  0% { transform: translate(-50%, -50%) translateY(-7.5px); }
-  100% { transform: translate(-50%, -50%) translateY(7.5px); }
-}
-
-/* Logo Image */
-.logo-img {
-  position: absolute;
-  top: calc(20% + 5cm);
-  left: calc(20% + 2.5cm);
-  transform: rotate(-20deg);
-  width: 120px;
-  z-index: 2;
-  animation: floatOverlay 3s ease-in-out infinite alternate;
-}
-
-/* Logo Text */
-.logo-text {
-  width: 220px;
-  margin: -5cm auto 20px auto;
-  z-index: 2;
-}
-
-/* Tagline */
 .tagline-container p {
-  position: absolute;
-  top: calc(50% + 2cm + 300px - 4cm);
-  left: 50%;
-  transform: translateX(-50%);
   background: rgba(0,0,0,0.25);
   padding: 8px 18px;
   border-radius: 6px;
   font-family: 'Pacifico', cursive;
   font-size: 1.5rem;
-  z-index: 3;
   color: #fff;
   text-align: center;
+  margin-bottom: 20px;
 }
 
 /* CTA Button */
@@ -91,6 +47,8 @@ body {
   margin-top: 20px;
   cursor: pointer;
   transition: all 0.3s ease;
+  text-decoration: none; /* remove underline from button links */
+  color: #fff;
 }
 .cta-button:hover {
   background-color: #e76f51;
@@ -101,51 +59,32 @@ body {
 /* ---------------- RECIPE SECTION ---------------- */
 .recipe-links {
   position: relative;
-  margin-top: 1cm;
+  margin-top: 2cm;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-/* Recipe Headings */
 .recipe-links h2 {
   font-family: 'Baloo 2', cursive;
   font-size: 2.8rem;
   color: #f4a261;
   text-transform: uppercase;
   letter-spacing: 1px;
-  border: none;
-  border-radius: 12px;
-  padding: 10px 30px;
-  background: rgba(38,70,83,0.2);
-  text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
   margin-bottom: 40px;
-  transition: all 0.3s ease;
   text-align: center;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
 }
 
-/* Remove underline from all recipe heading links and card names */
-.recipe-links h2 a,
-.recipe-card span {
-  text-decoration: none !important;
-  color: inherit;
-  transition: all 0.3s ease;
+/* Recipe Cards Container */
+.links {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-/* Hover effect for heading links */
-.recipe-links h2 a:hover {
-  background: rgba(38,70,83,0.4);
-  transform: scale(1.05);
-  display: inline-block;
-}
-
-/* Hover effect for heading boxes */
-.recipe-links h2:hover {
-  background: rgba(38,70,83,0.4);
-  transform: scale(1.05);
-}
-
-/* ---------------- Recipe Cards ---------------- */
+/* Recipe Cards */
 .recipe-card {
   width: 220px;
   padding: 15px;
@@ -158,25 +97,35 @@ body {
   gap: 10px;
   transition: all 0.35s ease;
   border: 2px solid rgba(255,255,255,0.1);
+  text-decoration: none; /* remove underline */
 }
 
-.recipe-card:hover {
-  transform: scale(1.05) translateY(-6px);
-  box-shadow: 0 0 20px rgba(244,162,97,0.7);
-}
-
-/* Recipe Name Span */
+/* Remove underline from span inside cards */
 .recipe-card span {
   font-family: 'Baloo 2', cursive;
   font-size: 1.2rem;
   font-weight: 700;
   color: #e76f51;
+  text-decoration: none; /* remove underline */
   padding: 5px 12px;
   background: rgba(255,255,255,0.1);
   border-radius: 6px;
-  letter-spacing: 0.5px;
   display: inline-block;
   transition: all 0.3s ease;
+  text-align: center;
+}
+
+/* Icons inside Recipe Cards */
+.recipe-card i {
+  font-size: 2rem;
+  color: #264653;
+  transition: color 0.3s;
+}
+
+/* Hover Effects */
+.recipe-card:hover {
+  transform: scale(1.05) translateY(-6px);
+  box-shadow: 0 0 20px rgba(244,162,97,0.7);
 }
 
 .recipe-card span:hover {
@@ -184,12 +133,6 @@ body {
   transform: scale(1.05);
 }
 
-/* Font Awesome Icons */
-.recipe-card i {
-  font-size: 2rem;
-  color: #264653;
-  transition: color 0.3s;
-}
 .recipe-card i:hover {
   color: #e76f51;
 }
@@ -205,27 +148,21 @@ footer {
 
 /* ---------------- RESPONSIVE ---------------- */
 @media (max-width: 1200px) {
-  .logo-img { width: 100px; }
+  .recipe-card { width: 200px; }
 }
 
 @media (max-width: 992px) {
-  .logo-img { width: 90px; }
+  .recipe-card { width: 180px; }
 }
 
 @media (max-width: 768px) {
   .hero { min-height: 80vh; }
-  .hero::before { width: 600px; height: 400px; }
-  .logo-img { width: 80px; }
-  .logo-text { width: 180px; }
   .tagline-container p { font-size: 1.2rem; }
-  .recipe-links { margin-top: 0.5cm; }
   .recipe-links h2 { font-size: 2rem; }
-  .recipe-links h2 a { font-size: inherit; }
   .recipe-card { width: 90%; padding: 15px; }
   .recipe-card i { font-size: 2rem; }
-  .recipe-card span { padding: 3px 8px; }
+  .recipe-card span { padding: 3px 8px; font-size: 1.1rem; }
 }
-
 
 
 
