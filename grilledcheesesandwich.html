@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grilled Cheese Sandwich | My Recipe Book</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="hero">
+    <img src="images/logo-text.png" alt="Recipe Book Logo" class="logo-text">
+    <div class="title-logo">
+      <img src="images/logo-img.png" alt="Recipe Icon" class="logo-img">
+      <h1>My Recipe Book</h1>
+    </div>
+    <p>Delicious recipes made simple!</p>
+  </header>
+
+  <main>
+    <section class="recipe-content">
+      <h2>Grilled Cheese Sandwich</h2>
+      <p><em>Extra cheesy grilled cheese sandwich</em></p>
+
+      <div class="recipe-info">
+        <p><strong>Prep time:</strong> 10 mins</p>
+        <p><strong>Yield:</strong> 4 servings</p>
+      </div>
+
+      <h3>Ingredients</h3>
+      <ul>
+        <li>1/4 cup butter, softened</li>
+        <li>1 tablespoon grated Parmesan cheese</li>
+        <li>8 Italian bread slices</li>
+        <li>4 (3/4-oz.) provolone cheese slices</li>
+        <li>4 (3/4-oz.) mozzarella cheese slices</li>
+      </ul>
+
+      <h3>Steps</h3>
+      <ol>
+        <li>Stir together butter and Parmesan cheese in a small bowl.</li>
+        <li>Spread 1 1/2 tsp. butter mixture on 1 side of each bread slice. Place 4 bread slices, buttered sides down, on wax paper. Top with provolone and mozzarella cheeses; top with remaining bread slices, buttered sides up.</li>
+        <li>Cook sandwiches, in batches, on a hot griddle or in a non-stick skillet over medium heat, gently pressing with a spatula, 4 minutes on each side or until golden brown and cheese is melted.</li>
+      </ol>
+    </section>
+
+    <div class="back-home">
+      <a href="index.html">← Back to Home</a>
+    </div>
+  </main>
+
+  <footer>
+    <p id="footer-text">&copy; 2024 Recipe Book App | DESPOE2024</p>
+  </footer>
+
+  <script>
+    const footer = document.getElementById("footer-text");
+    const today = new Date();
+    footer.innerHTML = `&copy; ${today.getFullYear()} Recipe Book App | DESPOE2024<br>Today's date: ${today.toDateString()}`;
+  </script>
+</body>
+</html>
+
+   
+
