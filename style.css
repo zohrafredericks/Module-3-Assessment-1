@@ -109,14 +109,14 @@ body {
   align-items: center;
 }
 
-/* UPDATED RECIPE HEADINGS */
+/* UPDATED RECIPE HEADINGS – no red border */
 .recipe-links h2 {
   font-family: 'Baloo 2', cursive;
   font-size: 2.8rem;
   color: #f4a261;
   text-transform: uppercase;
   letter-spacing: 1px;
-  border: 3px solid #e76f51;
+  border: none; /* removed red border */
   border-radius: 12px;
   padding: 10px 30px;
   background: rgba(38,70,83,0.2);
@@ -211,4 +211,5 @@ footer {
 }
 
  
+
 
