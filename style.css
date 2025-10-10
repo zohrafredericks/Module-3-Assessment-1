@@ -3,8 +3,6 @@ body {
   margin: 0;
   font-family: 'Roboto', sans-serif;
   color: #333;
-
-  /* Full-page background */
   background-image: url('images/background01.png');
   background-size: cover;
   background-position: center;
@@ -51,7 +49,7 @@ body {
 /* Logo Image */
 .logo-img {
   position: absolute;
-  top: calc(20% + 5cm); /* moved down 3cm previously */
+  top: calc(20% + 5cm);
   left: calc(20% + 2.5cm);
   transform: rotate(-20deg);
   width: 120px;
@@ -102,21 +100,21 @@ body {
 
 /* ---------------- RECIPE SECTION ---------------- */
 .recipe-links {
-  position: relative; /* keeps section in normal flow */
-  margin-top: 1cm;    /* moves entire section 1cm below the tagline */
+  position: relative;
+  margin-top: 1cm;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-/* UPDATED RECIPE HEADINGS – no red border, links fix */
+/* Recipe Headings */
 .recipe-links h2 {
   font-family: 'Baloo 2', cursive;
   font-size: 2.8rem;
   color: #f4a261;
   text-transform: uppercase;
   letter-spacing: 1px;
-  border: none; /* removed red border */
+  border: none;
   border-radius: 12px;
   padding: 10px 30px;
   background: rgba(38,70,83,0.2);
@@ -126,52 +124,53 @@ body {
   text-align: center;
 }
 
-/* Target links inside headings to remove underline */
-.recipe-links h2 a {
-  text-decoration: none; /* removes underline */
-  color: inherit;        /* inherits heading color */
+/* Remove underline from all recipe heading links and card names */
+.recipe-links h2 a,
+.recipe-card span {
+  text-decoration: none !important;
+  color: inherit;
   transition: all 0.3s ease;
 }
 
+/* Hover effect for heading links */
 .recipe-links h2 a:hover {
-  color: #f4a261;
-  background: rgba(38,70,83,0.4); /* match heading hover */
+  background: rgba(38,70,83,0.4);
   transform: scale(1.05);
-  display: inline-block; /* ensures transform works */
+  display: inline-block;
 }
 
+/* Hover effect for heading boxes */
 .recipe-links h2:hover {
   background: rgba(38,70,83,0.4);
   transform: scale(1.05);
 }
 
-/* Recipe Cards */
+/* ---------------- Recipe Cards ---------------- */
 .recipe-card {
-  width: 220px; /* smaller width */
-  padding: 15px; /* reduced padding */
+  width: 220px;
+  padding: 15px;
   background: linear-gradient(145deg, #f4a261, #e76f51);
-  border-radius: 14px; /* slightly smaller corners to match size */
-  box-shadow: 0 5px 15px rgba(0,0,0,0.25); /* slightly softer shadow */
+  border-radius: 14px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.25);
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px; /* reduced gap */
+  gap: 10px;
   transition: all 0.35s ease;
   border: 2px solid rgba(255,255,255,0.1);
 }
 
 .recipe-card:hover {
-  transform: scale(1.05) translateY(-6px); /* smaller lift for smaller card */
-  box-shadow: 0 0 20px rgba(244,162,97,0.7); /* slightly smaller glow */
+  transform: scale(1.05) translateY(-6px);
+  box-shadow: 0 0 20px rgba(244,162,97,0.7);
 }
 
 /* Recipe Name Span */
 .recipe-card span {
-  font-family: 'Baloo 2', cursive; /* playful font */
-  font-size: 1.2rem; /* slightly smaller font for smaller card */
+  font-family: 'Baloo 2', cursive;
+  font-size: 1.2rem;
   font-weight: 700;
-  color: #e76f51; /* pop of red */
-  text-decoration: none; /* removes underline */
+  color: #e76f51;
   padding: 5px 12px;
   background: rgba(255,255,255,0.1);
   border-radius: 6px;
@@ -219,13 +218,14 @@ footer {
   .logo-img { width: 80px; }
   .logo-text { width: 180px; }
   .tagline-container p { font-size: 1.2rem; }
-  .recipe-links { margin-top: 0.5cm; } /* responsive adjustment */
+  .recipe-links { margin-top: 0.5cm; }
   .recipe-links h2 { font-size: 2rem; }
-  .recipe-links h2 a { font-size: inherit; } /* keeps responsive link size */
+  .recipe-links h2 a { font-size: inherit; }
   .recipe-card { width: 90%; padding: 15px; }
   .recipe-card i { font-size: 2rem; }
   .recipe-card span { padding: 3px 8px; }
 }
+
 
 
 
