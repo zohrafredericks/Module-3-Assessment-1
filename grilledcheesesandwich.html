@@ -5,79 +5,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ultimate Cheesy Grilled Sandwich | My Recipe Book</title>
   <link rel="stylesheet" href="style.css">
-  <!-- Google Font for playful headings -->
   <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700&display=swap" rel="stylesheet">
 
-  <!-- Page-specific style to remove backgroundland.png overlay -->
+  <!-- Page-specific style -->
   <style>
-    .hero::before {
-      display: none !important;
+    /* Full-page background */
+    body {
+      background-image: url('images/background01.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      min-height: 100vh;
+      margin: 0;
     }
-  </style>
-</head>
-<body>
-  <!-- HERO SECTION -->
-  <header class="hero">
-    <p class="tagline-container">Delicious recipes made simple!</p>
-  </header>
 
-  <!-- MAIN CONTENT -->
-  <main>
-    <section class="recipe-content">
-      <h2>Grilled Cheese Sandwich</h2>
-      <p><em>Extra cheesy grilled delight</em></p>
+    /* Centered recipe image at the top */
+    .recipe-image {
+      text-align: center;
+      margin: 30px 0;
+    }
 
-      <!-- Recipe Image -->
-      <div class="recipe-image" style="text-align:center; margin: 20px 0;">
-        <img src="images/grilledCheese.png" alt="Grilled Cheese Sandwich" 
-             style="width:100%; max-width:400px; border-radius:12px; box-shadow: 0 5px 15px rgba(0,0,0,0.3);">
-      </div>
+    .recipe-image img {
+      max-width: 400px;
+      width: 90%;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    }
 
-      <!-- Recipe Info -->
-      <div class="recipe-info" style="margin:20px 0; font-weight:700;">
-        <p><strong>Prep time:</strong> 10 mins</p>
-        <p><strong>Yield:</strong> 4 servings</p>
-      </div>
-
-      <!-- Ingredients -->
-      <h3>Ingredients</h3>
-      <ul class="recipe-box">
-        <li>1/4 cup butter, softened</li>
-        <li>1 tablespoon grated Parmesan cheese</li>
-        <li>8 Italian bread slices</li>
-        <li>4 (3/4-oz.) provolone cheese slices</li>
-        <li>4 (3/4-oz.) mozzarella cheese slices</li>
-      </ul>
-
-      <!-- Steps -->
-      <h3>Steps</h3>
-      <ol class="recipe-box">
-        <li>Stir together butter and Parmesan cheese in a small bowl.</li>
-        <li>Spread 1 1/2 tsp. butter mixture on 1 side of each bread slice. Place 4 bread slices, buttered sides down, on wax paper. Top with provolone and mozzarella cheeses; top with remaining bread slices, buttered sides up.</li>
-        <li>Cook sandwiches, in batches, on a hot griddle or in a non-stick skillet over medium heat, gently pressing with a spatula, 4 minutes on each side or until golden brown and cheese is melted.</li>
-      </ol>
-    </section>
-
-    <!-- Back to Home Button -->
-    <div class="back-home">
-      <a href="index.html">← Back to Home</a>
-    </div>
-  </main>
-
-  <!-- FOOTER -->
-  <footer>
-    <p id="footer-text">&copy; 2024 Recipe Book App | DESPOE2024</p>
-  </footer>
-
-  <!-- Footer Script for Current Date -->
-  <script>
-    const footer = document.getElementById("footer-text");
-    const today = new Date();
-    footer.innerHTML = `&copy; ${today.getFullYear()} Recipe Book App | DESPOE2024<br>Today's date: ${today.toDateString()}`;
-  </script>
-
-  <!-- PAGE-SPECIFIC STYLING -->
-  <style>
     /* Back to Home Button */
     .back-home {
       text-align: center;
@@ -124,8 +78,56 @@
       text-shadow: 1px 1px 4px rgba(0,0,0,0.4);
     }
   </style>
+</head>
+<body>
+  <main>
+    <section class="recipe-content">
+      <h2>Grilled Cheese Sandwich</h2>
+      <p><em>Extra cheesy grilled delight</em></p>
+
+      <div class="recipe-image">
+        <img src="images/grilledCheese.png" alt="Grilled Cheese Sandwich">
+      </div>
+
+      <div class="recipe-info" style="margin:20px 0; font-weight:700;">
+        <p><strong>Prep time:</strong> 10 mins</p>
+        <p><strong>Yield:</strong> 4 servings</p>
+      </div>
+
+      <h3>Ingredients</h3>
+      <ul class="recipe-box">
+        <li>1/4 cup butter, softened</li>
+        <li>1 tablespoon grated Parmesan cheese</li>
+        <li>8 Italian bread slices</li>
+        <li>4 (3/4-oz.) provolone cheese slices</li>
+        <li>4 (3/4-oz.) mozzarella cheese slices</li>
+      </ul>
+
+      <h3>Steps</h3>
+      <ol class="recipe-box">
+        <li>Stir together butter and Parmesan cheese in a small bowl.</li>
+        <li>Spread 1 1/2 tsp. butter mixture on 1 side of each bread slice. Place 4 bread slices, buttered sides down, on wax paper. Top with provolone and mozzarella cheeses; top with remaining bread slices, buttered sides up.</li>
+        <li>Cook sandwiches, in batches, on a hot griddle or in a non-stick skillet over medium heat, gently pressing with a spatula, 4 minutes on each side or until golden brown and cheese is melted.</li>
+      </ol>
+    </section>
+
+    <div class="back-home">
+      <a href="index.html">← Back to Home</a>
+    </div>
+  </main>
+
+  <footer>
+    <p id="footer-text">&copy; 2025 Recipe Book App | DESPOE2024</p>
+  </footer>
+
+  <script>
+    const footer = document.getElementById("footer-text");
+    const today = new Date();
+    footer.innerHTML = `&copy; ${today.getFullYear()} Recipe Book App | DESPOE2024<br>Today's date: ${today.toDateString()}`;
+  </script>
 </body>
 </html>
+
 
 
 
