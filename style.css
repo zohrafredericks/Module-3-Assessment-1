@@ -109,7 +109,7 @@ body {
   align-items: center;
 }
 
-/* UPDATED RECIPE HEADINGS – no red border */
+/* UPDATED RECIPE HEADINGS – no red border, link fix */
 .recipe-links h2 {
   font-family: 'Baloo 2', cursive;
   font-size: 2.8rem;
@@ -123,7 +123,23 @@ body {
   text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
   margin-bottom: 40px;
   transition: all 0.3s ease;
+  text-align: center;
 }
+
+/* Target links inside headings */
+.recipe-links h2 a {
+  text-decoration: none; /* removes underline */
+  color: inherit;        /* inherits heading color */
+  transition: all 0.3s ease;
+}
+
+.recipe-links h2 a:hover {
+  color: #f4a261;
+  background: rgba(38,70,83,0.4); /* match heading hover */
+  transform: scale(1.05);
+  display: inline-block; /* ensures transform works */
+}
+
 .recipe-links h2:hover {
   background: rgba(38,70,83,0.4);
   transform: scale(1.05);
@@ -149,13 +165,13 @@ body {
   box-shadow: 0 0 20px rgba(244,162,97,0.7); /* slightly smaller glow */
 }
 
-/* Recipe Name Span stays the same */
+/* Recipe Name Span */
 .recipe-card span {
-  font-family: 'Baloo 2', cursive;
+  font-family: 'Baloo 2', cursive; /* playful font */
   font-size: 1.2rem; /* slightly smaller font for smaller card */
   font-weight: 700;
-  color: #e76f51;
-  text-decoration: none;
+  color: #e76f51; /* pop of red */
+  text-decoration: none; /* removes underline */
   padding: 5px 12px;
   background: rgba(255,255,255,0.1);
   border-radius: 6px;
@@ -169,7 +185,7 @@ body {
   transform: scale(1.05);
 }
 
-/* Icons can stay the same or be slightly smaller */
+/* Font Awesome Icons */
 .recipe-card i {
   font-size: 2rem;
   color: #264653;
@@ -205,11 +221,12 @@ footer {
   .tagline-container p { font-size: 1.2rem; }
   .recipe-links { margin-top: 0.5cm; } /* responsive adjustment */
   .recipe-links h2 { font-size: 2rem; }
+  .recipe-links h2 a { font-size: inherit; } /* keeps responsive link size */
   .recipe-card { width: 90%; padding: 15px; }
   .recipe-card i { font-size: 2rem; }
   .recipe-card span { padding: 3px 8px; }
 }
 
- 
+
 
 
